@@ -76,6 +76,59 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		72212CDF2C1CB247002CF2C8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				72786A5F2C1CA48A00E7D20C /* Main.storyboard */,
+				72786A642C1CA48F00E7D20C /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		72212CE02C1CB339002CF2C8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				72786A5D2C1CA48A00E7D20C /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		72212CE12C1CB356002CF2C8 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		72212CE22C1CB36D002CF2C8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		72212CE32C1CB381002CF2C8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			path = Constants/Models;
+			sourceTree = "<group>";
+		};
+		72212CE42C1CB390002CF2C8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		72212CE52C1CB3A1002CF2C8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		72786A4D2C1CA48A00E7D20C = {
 			isa = PBXGroup;
 			children = (
@@ -101,10 +154,14 @@
 			children = (
 				72786A592C1CA48A00E7D20C /* AppDelegate.swift */,
 				72786A5B2C1CA48A00E7D20C /* SceneDelegate.swift */,
-				72786A5D2C1CA48A00E7D20C /* ViewController.swift */,
-				72786A5F2C1CA48A00E7D20C /* Main.storyboard */,
+				72212CE12C1CB356002CF2C8 /* Constants */,
+				72212CE22C1CB36D002CF2C8 /* Extensions */,
+				72212CE32C1CB381002CF2C8 /* Models */,
+				72212CE42C1CB390002CF2C8 /* ViewModels */,
+				72212CE02C1CB339002CF2C8 /* ViewControllers */,
+				72212CDF2C1CB247002CF2C8 /* Views */,
+				72212CE52C1CB3A1002CF2C8 /* Resources */,
 				72786A622C1CA48F00E7D20C /* Assets.xcassets */,
-				72786A642C1CA48F00E7D20C /* LaunchScreen.storyboard */,
 				72786A672C1CA48F00E7D20C /* Info.plist */,
 			);
 			path = Tasky;
@@ -126,7 +183,6 @@
 				739D006421DBE565E1713AE4 /* Pods-TaskyTests.debug.xcconfig */,
 				B3B01200A1BF4E770FA3621D /* Pods-TaskyTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
