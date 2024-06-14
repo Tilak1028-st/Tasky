@@ -13,9 +13,24 @@
 		72786A612C1CA48A00E7D20C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 72786A602C1CA48A00E7D20C /* Base */; };
 		72786A632C1CA48F00E7D20C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72786A622C1CA48F00E7D20C /* Assets.xcassets */; };
 		72786A662C1CA48F00E7D20C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 72786A652C1CA48F00E7D20C /* Base */; };
+		72786A742C1CA49F00E7D20C /* TaskyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72786A732C1CA49F00E7D20C /* TaskyTests.swift */; };
+		85153DB4E6C048D37E0B8C69 /* Pods_TaskyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A1C0F703428F6DF92D46192 /* Pods_TaskyTests.framework */; };
+		A3723ED6FB70A3EF10B4FACD /* Pods_Tasky.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F885300C6A8E20E13EE9CA06 /* Pods_Tasky.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		72786A752C1CA49F00E7D20C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 72786A4E2C1CA48A00E7D20C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 72786A552C1CA48A00E7D20C;
+			remoteInfo = Tasky;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		3783951AEBB84B48A7CB6EC3 /* Pods-Tasky.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tasky.debug.xcconfig"; path = "Target Support Files/Pods-Tasky/Pods-Tasky.debug.xcconfig"; sourceTree = "<group>"; };
+		6A1C0F703428F6DF92D46192 /* Pods_TaskyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaskyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72786A562C1CA48A00E7D20C /* Tasky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tasky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72786A592C1CA48A00E7D20C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72786A5B2C1CA48A00E7D20C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +39,12 @@
 		72786A622C1CA48F00E7D20C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72786A652C1CA48F00E7D20C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		72786A672C1CA48F00E7D20C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72786A712C1CA49F00E7D20C /* TaskyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		72786A732C1CA49F00E7D20C /* TaskyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskyTests.swift; sourceTree = "<group>"; };
+		739D006421DBE565E1713AE4 /* Pods-TaskyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskyTests.debug.xcconfig"; path = "Target Support Files/Pods-TaskyTests/Pods-TaskyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B3B01200A1BF4E770FA3621D /* Pods-TaskyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskyTests.release.xcconfig"; path = "Target Support Files/Pods-TaskyTests/Pods-TaskyTests.release.xcconfig"; sourceTree = "<group>"; };
+		F885300C6A8E20E13EE9CA06 /* Pods_Tasky.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tasky.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA5FAA6DFD25776DDF13102E /* Pods-Tasky.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tasky.release.xcconfig"; path = "Target Support Files/Pods-Tasky/Pods-Tasky.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +52,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3723ED6FB70A3EF10B4FACD /* Pods_Tasky.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72786A6E2C1CA49F00E7D20C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85153DB4E6C048D37E0B8C69 /* Pods_TaskyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		375544E2ACA68F19382D0B3D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F885300C6A8E20E13EE9CA06 /* Pods_Tasky.framework */,
+				6A1C0F703428F6DF92D46192 /* Pods_TaskyTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		72786A4D2C1CA48A00E7D20C = {
 			isa = PBXGroup;
 			children = (
 				72786A582C1CA48A00E7D20C /* Tasky */,
+				72786A722C1CA49F00E7D20C /* TaskyTests */,
 				72786A572C1CA48A00E7D20C /* Products */,
+				E8B0825B9FE487BE1E189A4C /* Pods */,
+				375544E2ACA68F19382D0B3D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -49,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				72786A562C1CA48A00E7D20C /* Tasky.app */,
+				72786A712C1CA49F00E7D20C /* TaskyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,6 +110,26 @@
 			path = Tasky;
 			sourceTree = "<group>";
 		};
+		72786A722C1CA49F00E7D20C /* TaskyTests */ = {
+			isa = PBXGroup;
+			children = (
+				72786A732C1CA49F00E7D20C /* TaskyTests.swift */,
+			);
+			path = TaskyTests;
+			sourceTree = "<group>";
+		};
+		E8B0825B9FE487BE1E189A4C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3783951AEBB84B48A7CB6EC3 /* Pods-Tasky.debug.xcconfig */,
+				FA5FAA6DFD25776DDF13102E /* Pods-Tasky.release.xcconfig */,
+				739D006421DBE565E1713AE4 /* Pods-TaskyTests.debug.xcconfig */,
+				B3B01200A1BF4E770FA3621D /* Pods-TaskyTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +137,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 72786A6A2C1CA48F00E7D20C /* Build configuration list for PBXNativeTarget "Tasky" */;
 			buildPhases = (
+				24CFCC1C4B88A15D571617F6 /* [CP] Check Pods Manifest.lock */,
 				72786A522C1CA48A00E7D20C /* Sources */,
 				72786A532C1CA48A00E7D20C /* Frameworks */,
 				72786A542C1CA48A00E7D20C /* Resources */,
@@ -87,6 +151,25 @@
 			productReference = 72786A562C1CA48A00E7D20C /* Tasky.app */;
 			productType = "com.apple.product-type.application";
 		};
+		72786A702C1CA49F00E7D20C /* TaskyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 72786A772C1CA49F00E7D20C /* Build configuration list for PBXNativeTarget "TaskyTests" */;
+			buildPhases = (
+				447F7253EF456050FBFA687B /* [CP] Check Pods Manifest.lock */,
+				72786A6D2C1CA49F00E7D20C /* Sources */,
+				72786A6E2C1CA49F00E7D20C /* Frameworks */,
+				72786A6F2C1CA49F00E7D20C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				72786A762C1CA49F00E7D20C /* PBXTargetDependency */,
+			);
+			name = TaskyTests;
+			productName = TaskyTests;
+			productReference = 72786A712C1CA49F00E7D20C /* TaskyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -99,6 +182,10 @@
 				TargetAttributes = {
 					72786A552C1CA48A00E7D20C = {
 						CreatedOnToolsVersion = 15.3;
+					};
+					72786A702C1CA49F00E7D20C = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 72786A552C1CA48A00E7D20C;
 					};
 				};
 			};
@@ -116,6 +203,7 @@
 			projectRoot = "";
 			targets = (
 				72786A552C1CA48A00E7D20C /* Tasky */,
+				72786A702C1CA49F00E7D20C /* TaskyTests */,
 			);
 		};
 /* End PBXProject section */
@@ -131,7 +219,61 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		72786A6F2C1CA49F00E7D20C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24CFCC1C4B88A15D571617F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tasky-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		447F7253EF456050FBFA687B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TaskyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		72786A522C1CA48A00E7D20C /* Sources */ = {
@@ -144,7 +286,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		72786A6D2C1CA49F00E7D20C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72786A742C1CA49F00E7D20C /* TaskyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		72786A762C1CA49F00E7D20C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 72786A552C1CA48A00E7D20C /* Tasky */;
+			targetProxy = 72786A752C1CA49F00E7D20C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		72786A5F2C1CA48A00E7D20C /* Main.storyboard */ = {
@@ -287,6 +445,7 @@
 		};
 		72786A6B2C1CA48F00E7D20C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3783951AEBB84B48A7CB6EC3 /* Pods-Tasky.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -315,6 +474,7 @@
 		};
 		72786A6C2C1CA48F00E7D20C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA5FAA6DFD25776DDF13102E /* Pods-Tasky.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -341,6 +501,44 @@
 			};
 			name = Release;
 		};
+		72786A782C1CA49F00E7D20C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 739D006421DBE565E1713AE4 /* Pods-TaskyTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JDQ7V977AB;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com..TaskyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tasky.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tasky";
+			};
+			name = Debug;
+		};
+		72786A792C1CA49F00E7D20C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3B01200A1BF4E770FA3621D /* Pods-TaskyTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JDQ7V977AB;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com..TaskyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tasky.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tasky";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -358,6 +556,15 @@
 			buildConfigurations = (
 				72786A6B2C1CA48F00E7D20C /* Debug */,
 				72786A6C2C1CA48F00E7D20C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		72786A772C1CA49F00E7D20C /* Build configuration list for PBXNativeTarget "TaskyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72786A782C1CA49F00E7D20C /* Debug */,
+				72786A792C1CA49F00E7D20C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
