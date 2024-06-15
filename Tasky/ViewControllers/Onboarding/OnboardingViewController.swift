@@ -37,10 +37,10 @@ class OnboardingViewController: UIViewController {
     }
     
     private func moveToDashboard() {
-        let dashboardVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "DashboardViewController")
+        let taskViewController = UIStoryboard(name: AppStringConstant.main, bundle: nil).instantiateViewController(identifier: AppStringConstant.taskViewController)
         
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window {
-            window.rootViewController = dashboardVc
+            window.rootViewController = UINavigationController(rootViewController: taskViewController)
             UIView.transition(with: window, duration: 0.25, options: .transitionCrossDissolve, animations: nil, completion: nil)
         }
     }

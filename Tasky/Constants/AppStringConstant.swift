@@ -17,6 +17,19 @@ struct AppStringConstant {
     static var thirdOnboardingAnimation = "onboarding-3"
     static var next = "Next"
     static var getStarted = "Get Started"
+    static var main = "Main"
+    
+    
+    
+    // View Controllers
+    static var taskViewController = "TaskViewController"
+    static var homeViewController = "HomeViewController"
+    static var addNewTaskViewController = "AddNewTaskViewController"
+    static var dashboardViewController = "DashboardViewController"
+}
+
+struct ImageConstant {
+    static var plusCircleFill = "plus.circle.fill"
 }
 
 struct AppErrorConstant {
