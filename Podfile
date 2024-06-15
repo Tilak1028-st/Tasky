@@ -7,6 +7,8 @@ target 'Tasky' do
 
   # Pods for Tasky
 
+pod 'lottie-ios'
+
   target 'TaskyTests' do
     inherit! :search_paths
     # Pods for testing
