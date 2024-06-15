@@ -16,8 +16,8 @@ struct OnBoardingSlide {
     let buttonTitle: String
     
     static let collection: [OnBoardingSlide] = [
-        .init(title: AppStringConstant.firstOnBoardingTitle, animationName: AppStringConstant.firstOnboardingAnimation, buttonColor: .red, buttonTitle: AppStringConstant.next),
-        .init(title: AppStringConstant.secondOnBoardingTitle, animationName: AppStringConstant.secondOnboardingAnimation, buttonColor: .red, buttonTitle: AppStringConstant.next),
-        .init(title: AppStringConstant.thirdOnBoardingTitle, animationName: AppStringConstant.thirdOnboardingAnimation, buttonColor: .red, buttonTitle: AppStringConstant.getStarted)
+        .init(title: AppStringConstant.firstOnBoardingTitle, animationName: AppStringConstant.firstOnboardingAnimation, buttonColor: .appGreen, buttonTitle: AppStringConstant.next),
+        .init(title: AppStringConstant.secondOnBoardingTitle, animationName: AppStringConstant.secondOnboardingAnimation, buttonColor: .appGreen, buttonTitle: AppStringConstant.next),
+        .init(title: AppStringConstant.thirdOnBoardingTitle, animationName: AppStringConstant.thirdOnboardingAnimation, buttonColor: .appGreen, buttonTitle: AppStringConstant.getStarted)
     ]
 }
