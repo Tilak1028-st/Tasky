@@ -21,6 +21,10 @@
 		72EBE7D92C1CD12C009A890E /* onboarding-1.json in Resources */ = {isa = PBXBuildFile; fileRef = 72EBE7D82C1CD12C009A890E /* onboarding-1.json */; };
 		72EBE7DB2C1CD213009A890E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EBE7DA2C1CD213009A890E /* UIView+Extension.swift */; };
 		72EBE7DD2C1CD967009A890E /* OnBoardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EBE7DC2C1CD967009A890E /* OnBoardingSlide.swift */; };
+		72ED982E2C1D6700009B4F23 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72ED982D2C1D6700009B4F23 /* HomeViewController.swift */; };
+		72ED98302C1D670F009B4F23 /* AddNewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72ED982F2C1D670F009B4F23 /* AddNewTaskViewController.swift */; };
+		72ED98322C1D671B009B4F23 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72ED98312C1D671B009B4F23 /* DashboardViewController.swift */; };
+		72ED98342C1D67B5009B4F23 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72ED98332C1D67B5009B4F23 /* TaskViewController.swift */; };
 		85153DB4E6C048D37E0B8C69 /* Pods_TaskyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A1C0F703428F6DF92D46192 /* Pods_TaskyTests.framework */; };
 		A3723ED6FB70A3EF10B4FACD /* Pods_Tasky.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F885300C6A8E20E13EE9CA06 /* Pods_Tasky.framework */; };
 /* End PBXBuildFile section */
@@ -55,6 +59,10 @@
 		72EBE7D82C1CD12C009A890E /* onboarding-1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "onboarding-1.json"; sourceTree = "<group>"; };
 		72EBE7DA2C1CD213009A890E /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		72EBE7DC2C1CD967009A890E /* OnBoardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingSlide.swift; sourceTree = "<group>"; };
+		72ED982D2C1D6700009B4F23 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		72ED982F2C1D670F009B4F23 /* AddNewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskViewController.swift; sourceTree = "<group>"; };
+		72ED98312C1D671B009B4F23 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		72ED98332C1D67B5009B4F23 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		739D006421DBE565E1713AE4 /* Pods-TaskyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskyTests.debug.xcconfig"; path = "Target Support Files/Pods-TaskyTests/Pods-TaskyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B3B01200A1BF4E770FA3621D /* Pods-TaskyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskyTests.release.xcconfig"; path = "Target Support Files/Pods-TaskyTests/Pods-TaskyTests.release.xcconfig"; sourceTree = "<group>"; };
 		F885300C6A8E20E13EE9CA06 /* Pods_Tasky.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tasky.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,7 +110,9 @@
 		72212CE02C1CB339002CF2C8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				72786A5D2C1CA48A00E7D20C /* OnboardingViewController.swift */,
+				72ED98332C1D67B5009B4F23 /* TaskViewController.swift */,
+				72ED98292C1D66AC009B4F23 /* Onboarding */,
+				72ED98282C1D669A009B4F23 /* Tabs */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -202,6 +212,48 @@
 				72786A732C1CA49F00E7D20C /* TaskyTests.swift */,
 			);
 			path = TaskyTests;
+			sourceTree = "<group>";
+		};
+		72ED98282C1D669A009B4F23 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				72ED982A2C1D66CA009B4F23 /* Home */,
+				72ED982B2C1D66D3009B4F23 /* AddNewTask */,
+				72ED982C2C1D66DD009B4F23 /* Dashboard */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		72ED98292C1D66AC009B4F23 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				72786A5D2C1CA48A00E7D20C /* OnboardingViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		72ED982A2C1D66CA009B4F23 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				72ED982D2C1D6700009B4F23 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		72ED982B2C1D66D3009B4F23 /* AddNewTask */ = {
+			isa = PBXGroup;
+			children = (
+				72ED982F2C1D670F009B4F23 /* AddNewTaskViewController.swift */,
+			);
+			path = AddNewTask;
+			sourceTree = "<group>";
+		};
+		72ED982C2C1D66DD009B4F23 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				72ED98312C1D671B009B4F23 /* DashboardViewController.swift */,
+			);
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 		E8B0825B9FE487BE1E189A4C /* Pods */ = {
@@ -389,9 +441,13 @@
 				72EBE7DB2C1CD213009A890E /* UIView+Extension.swift in Sources */,
 				72212CED2C1CB86B002CF2C8 /* AppStringConstant.swift in Sources */,
 				72EBE7DD2C1CD967009A890E /* OnBoardingSlide.swift in Sources */,
+				72ED982E2C1D6700009B4F23 /* HomeViewController.swift in Sources */,
 				72786A5E2C1CA48A00E7D20C /* OnboardingViewController.swift in Sources */,
 				72212CF02C1CC52C002CF2C8 /* OnboardingCollectionViewCell.swift in Sources */,
 				72786A5A2C1CA48A00E7D20C /* AppDelegate.swift in Sources */,
+				72ED98322C1D671B009B4F23 /* DashboardViewController.swift in Sources */,
+				72ED98302C1D670F009B4F23 /* AddNewTaskViewController.swift in Sources */,
+				72ED98342C1D67B5009B4F23 /* TaskViewController.swift in Sources */,
 				72786A5C2C1CA48A00E7D20C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
