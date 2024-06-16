@@ -47,11 +47,11 @@ The app follows a clean and intuitive UI design as per the provided mockups.
 ## Installation
 1. Clone the repository:
    ```sh
-   git clone [https://github.com/yourusername/smart-task-manager.git](https://github.com/Tilak1028-st/Tasky.git)
+   git clone https://github.com/Tilak1028-st/Tasky.git
    ```
 2. Navigate to the project directory:
    ```sh
-   cd smart-task-manager
+   cd Tasky
    ```
 3. Install dependencies using CocoaPods:
    ```sh
@@ -59,7 +59,7 @@ The app follows a clean and intuitive UI design as per the provided mockups.
    ```
 4. Open the project in Xcode:
    ```sh
-   open SmartTaskManager.xcworkspace
+   open Tasky.xcworkspace
    ```
 5. Build and run the app on a simulator or physical device.
 
