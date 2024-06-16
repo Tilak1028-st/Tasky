@@ -26,7 +26,7 @@ struct AppStringConstant {
     static var inProgress = "In Progress"
     static var upcoming = "Upcoming"
     static var completed = "Completed"
-    
+    static var selectTime = "Select Time"
     
     // View Controllers
     static var taskViewController = "TaskViewController"
