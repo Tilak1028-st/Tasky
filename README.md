@@ -28,19 +28,21 @@ Here are some screenshots of the Smart Task Manager app:
   <tr style="text-align: center;">
     <td>
       <p><strong>1 - Home Screen</strong></p>
-      <img src="https://github.com/Tilak1028-st/Tasky/assets/75114840/13247522-80df-4b78-84e8-6f505d807c3b" width="275" height="370" alt="Home Screen">
+      <img src="https://github.com/Tilak1028-st/Tasky/assets/75114840/13247522-80df-4b78-84e8-6f505d807c3b" width="225" height="375" alt="Home Screen">
     </td>
     <td>
       <p><strong>2 - Add/Edit Task Screen</strong></p>
-      <img src="https://github.com/Tilak1028-st/Tasky/assets/75114840/eab4e8cb-6264-4b03-8b9d-d82d530905c0" width="275" height="370" alt="Add/Edit Task Screen">
+<img src="https://github.com/Tilak1028-st/Tasky/assets/75114840/eab4e8cb-6264-4b03-8b9d-d82d530905c0" width="225" height="375" alt="Add/Edit Task Screen">
     </td>
+  </tr>
+  <tr>
     <td>
       <p><strong>3 - Calendar Screen</strong></p>
-      <img src="https://github.com/Tilak1028-st/Tasky/assets/75114840/730992b0-9389-40f2-8b86-b019b9637f1f" width="274" height="370" alt="Calendar Screen">
+      <img src="https://github.com/Tilak1028-st/Tasky/assets/75114840/730992b0-9389-40f2-8b86-b019b9637f1f" width="225" height="375" alt="Calendar Screen">
     </td>
     <td>
       <p><strong>4 - Dashboard Screen</strong></p>
-      <img src="https://github.com/Tilak1028-st/Tasky/assets/75114840/cb9b31e3-6e9f-4580-914f-d0a8ff0be026" width="274" height="370" alt="Dashboard Screen">
+      <img src="https://github.com/Tilak1028-st/Tasky/assets/75114840/cb9b31e3-6e9f-4580-914f-d0a8ff0be026" width="225" height="375" alt="Dashboard Screen">
     </td>
   </tr>
 </table>
