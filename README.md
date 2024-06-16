@@ -62,17 +62,13 @@ The app follows a clean and intuitive UI design as per the provided mockups.
    open Tasky.xcworkspace
    ```
 5. Build and run the app on a simulator or physical device.
+   
 
-## Design Choices
-- **SwiftUI for UI Design:** SwiftUI was chosen for its declarative syntax and efficient UI updates.
-- **Core Data for Storage:** Core Data provides robust local storage with support for complex queries and relationships.
-- **Face ID Integration:** Enhances security by allowing biometric authentication.
-- **Third-Party Libraries:** Alamofire simplifies network requests, SDWebImage efficiently handles image caching, and MapKit provides comprehensive location services.
-- **CI/CD with GitHub Actions:** Ensures continuous integration and delivery, allowing automated testing and deployment.
-
-## Trade-offs
-- **SwiftUI vs. UIKit:** SwiftUI offers modern declarative syntax but lacks some advanced features present in UIKit.
-- **Core Data vs. Realm:** Core Data is integrated with the Apple ecosystem, but Realm offers simpler syntax and better performance for some use cases.
+## Design Choices and Trade-offs
+UIKit and MVC: Chosen for their stability and extensive documentation, making the app more maintainable and familiar to many iOS developers.
+Core Data: Provides a powerful local storage solution that supports complex queries and relationships.
+Third-Party Libraries: Selected for their reliability and ease of use, enhancing the app's functionality without significant overhead.
+CI/CD with GitHub Actions: Ensures efficient development workflows, allowing for continuous integration and delivery.
 
 ## Future Improvements
 - **Advanced Machine Learning:** Implement more sophisticated algorithms for task suggestions.
