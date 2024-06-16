@@ -28,12 +28,19 @@ jobs:
 
       - name: Verify Core Data Model
         run: |
-          if [ ! -d "Tasky/Tasky.xcdatamodeld" ]; then
-            echo "Error: Core Data model not found!"
+          MODEL_PATH="Tasky/Tasky.xcdatamodeld"
+          CURRENT_VERSION_FILE="$MODEL_PATH/.xccurrentversion"
+          if [ ! -d "$MODEL_PATH" ]; then
+            echo "Error: Core Data model not found at $MODEL_PATH!"
             exit 1
           fi
-          if [ ! -f "Tasky/Tasky.xcdatamodeld/.xccurrentversion" ]; then
-            echo "Error: .xccurrentversion file not found!"
+          if [ ! -f "$CURRENT_VERSION_FILE" ]; then
+            echo "Error: .xccurrentversion file not found at $MODEL_PATH!"
+            exit 1
+          fi
+          CURRENT_VERSION=$(defaults read "$CURRENT_VERSION_FILE" _XCCurrentVersionName)
+          if [ "$CURRENT_VERSION" != "Tasky 2.xcdatamodel" ]; then
+            echo "Error: Current version in .xccurrentversion file is not 'Tasky 2.xcdatamodel'!"
             exit 1
           fi
 
