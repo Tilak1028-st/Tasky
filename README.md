@@ -1,4 +1,4 @@
-# Tasky: Smart Task Manager
+![Simulator Screenshot - iPhone 11 Pro Max - 2024-06-17 at 01 09 41](https://github.com/Tilak1028-st/Tasky/assets/75114840/dda4b671-65c8-4983-b752-7302b7e9c1f5)# Tasky: Smart Task Manager
 
 ## Overview
 The Smart Task Manager is a comprehensive iOS application designed to help users manage their tasks efficiently. It allows users to create, read, update, and delete tasks, set priority levels, and receive location-based reminders. The app also includes a dashboard to visualize task statistics and progress. This README provides an overview of the app's features, design choices, and implementation details.
@@ -19,6 +19,28 @@ The app's user interface follows a clean and modern design using UIKit, ensuring
 3. **Add/Edit Task Screen:** A form to enter task details including title, description, due date, priority level, and location-based reminder.
 4. **Calendar Screen:** Uses FSCalendar to display tasks on a monthly calendar.
 5. **Dashboard Screen:** Displays task statistics using DGCharts for visual representations such as bar charts and pie charts.
+
+### Screenshots
+
+Here are some screenshots of the Smart Task Manager app:
+
+- **Home Screen:**
+  ![Home Screen] ![Simulator Screenshot - iPhone 11 Pro Max - 2024-06-17 at 01 09 41](https://github.com/Tilak1028-st/Tasky/assets/75114840/13247522-80df-4b78-84e8-6f505d807c3b)
+
+
+- **Task Detail Screen:**
+  ![Task Detail Screen]![Simulator Screenshot - iPhone 11 Pro Max - 2024-06-17 at 01 12 04](https://github.com/Tilak1028-st/Tasky/assets/75114840/eab4e8cb-6264-4b03-8b9d-d82d530905c0)
+
+
+- **Add/Edit Task Screen:**
+  ![Add/Edit Task Screen](screenshots/add_edit_task_screen.png)
+
+- **Calendar Screen:**
+  ![Calendar Screen]![Simulator Screenshot - iPhone 11 Pro Max - 2024-06-17 at 01 09 46](https://github.com/Tilak1028-st/Tasky/assets/75114840/730992b0-9389-40f2-8b86-b019b9637f1f)
+
+
+- **Dashboard Screen:**
+  ![Dashboard Screen]![Simulator Screenshot - iPhone 11 Pro Max - 2024-06-17 at 01 09 36](https://github.com/Tilak1028-st/Tasky/assets/75114840/cb9b31e3-6e9f-4580-914f-d0a8ff0be026)
 
 ## Implementation Details
 
