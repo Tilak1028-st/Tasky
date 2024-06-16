@@ -180,14 +180,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		72212CE02C1CB339002CF2C8 /* ViewControllers */ = {
+		72212CE02C1CB339002CF2C8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				72ED98332C1D67B5009B4F23 /* TaskViewController.swift */,
 				72ED98292C1D66AC009B4F23 /* Onboarding */,
 				72ED98282C1D669A009B4F23 /* Tabs */,
 			);
-			path = ViewControllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		72212CE12C1CB356002CF2C8 /* Constants */ = {
@@ -297,7 +297,7 @@
 				72212CE22C1CB36D002CF2C8 /* Extensions */,
 				722F5E0D2C1DCAE000513608 /* Utility */,
 				72212CE32C1CB381002CF2C8 /* Models */,
-				72212CE02C1CB339002CF2C8 /* ViewControllers */,
+				72212CE02C1CB339002CF2C8 /* Controllers */,
 				72212CEE2C1CC4F6002CF2C8 /* Cells */,
 				72212CDF2C1CB247002CF2C8 /* Views */,
 				72212CE52C1CB3A1002CF2C8 /* Resources */,
