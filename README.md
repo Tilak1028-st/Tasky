@@ -25,9 +25,7 @@ The app's user interface follows a clean and modern design using UIKit, ensuring
 Here are some screenshots of the Smart Task Manager app:
 
 - **Home Screen:**
-  ![Home Screen] ![Simulator Screenshot - iPhone 11 Pro Max - 2024-06-17 at 01 09 41](https://github.com/Tilak1028-st/Tasky/assets/75114840/13247522-80df-4b78-84e8-6f505d807c3b)
-
-
+  ![Home Screen] <img src="https://github.com/Tilak1028-st/Tasky/assets/75114840/13247522-80df-4b78-84e8-6f505d807c3b" width=230 height=470>
 - **Task Detail Screen:**
   ![Task Detail Screen]![Simulator Screenshot - iPhone 11 Pro Max - 2024-06-17 at 01 12 04](https://github.com/Tilak1028-st/Tasky/assets/75114840/eab4e8cb-6264-4b03-8b9d-d82d530905c0)
 
