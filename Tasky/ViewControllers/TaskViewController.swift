@@ -9,6 +9,7 @@ import UIKit
 
 class TaskViewController: UITabBarController {
     
+    
     @IBOutlet weak var customTabBar: UITabBar!
     
     
@@ -40,7 +41,7 @@ class TaskViewController: UITabBarController {
         // Add btnMiddle to customTabBar
         customTabBar.addSubview(addNewTaskButton)
     }
-
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         
@@ -52,8 +53,8 @@ class TaskViewController: UITabBarController {
             addNewTaskButton.sendActions(for: .touchUpInside)
         }
     }
-
-
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

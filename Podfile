@@ -8,6 +8,7 @@ target 'Tasky' do
   # Pods for Tasky
 
 pod 'lottie-ios'
+pod 'FSCalendar'
 
   target 'TaskyTests' do
     inherit! :search_paths

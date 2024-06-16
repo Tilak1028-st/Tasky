@@ -37,6 +37,7 @@ class OnboardingViewController: UIViewController {
     }
     
     private func moveToDashboard() {
+        UserDefaultsManager.shared.setHasCompletedIntroduction(true)
         let taskViewController = UIStoryboard(name: AppStringConstant.main, bundle: nil).instantiateViewController(identifier: AppStringConstant.taskViewController)
         
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window {
