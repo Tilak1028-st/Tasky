@@ -23,6 +23,9 @@ struct AppStringConstant {
     static var locationAccessDenied = "Location access was restricted or denied."
     static var failedToFindUserLocation = "Failed to find user's location:"
     static var search = "Search"
+    static var inProgress = "In Progress"
+    static var upcoming = "Upcoming"
+    static var completed = "Completed"
     
     
     // View Controllers
@@ -31,11 +34,17 @@ struct AppStringConstant {
     static var addNewTaskViewController = "AddNewTaskViewController"
     static var dashboardViewController = "DashboardViewController"
     static var mapSearchViewController = "MapSearchViewController"
+    
+    // Cells
+    static var taskTableViewCell = "TaskTableViewCell"
 }
 
 struct ImageConstant {
     static var plusCircleFill = "plus.circle.fill"
     static var xmarkCircleFill = "xmark.circle.fill"
+    static var checkmarkCircle = "checkmark.circle"
+    static var pencil = "pencil"
+    static var trash = "trash"
 }
 
 struct AppErrorConstant {

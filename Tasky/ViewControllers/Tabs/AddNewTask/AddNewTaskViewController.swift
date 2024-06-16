@@ -29,6 +29,7 @@ class AddNewTaskViewController: UIViewController {
     @IBOutlet weak var lowPriorityStackView: UIStackView!
     @IBOutlet weak var evenPriorityStackView: UIStackView!
     @IBOutlet weak var highPriorityStackView: UIStackView!
+    @IBOutlet weak var deleteTaskButton: UIButton!
     @IBOutlet weak var createTaskButton: UIButton!
     @IBOutlet weak var oddPriorityView: UIView!
     @IBOutlet weak var lowPriorityView: UIView!
@@ -39,28 +40,35 @@ class AddNewTaskViewController: UIViewController {
     // MARK: - Properties
     private let locationManager = CLLocationManager()
     var userCurrentLocation: Location?
+    var isEditingTask = false
+    var taskItem: TaskItem?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpAddNewTaskView()
         setupLocationManager()
+        populateTaskDataIfNeeded()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.transitioningDelegate = self
-        setupNavigationBar()
+        self.setupNavigationBar()
     }
+
     
     // MARK: - Setup Methods
     private func setUpAddNewTaskView() {
         // Setup task description text view
         taskDescriptionTextView.applyBorder(color: UIColor.gray, width: 1)
         taskDescriptionTextView.applyCornerRadius(20)
+        taskDescriptionTextView.delegate = self
         
         // Setup createTaskButton
         createTaskButton.applyCornerRadius(20)
+        deleteTaskButton.applyCornerRadius(20)
+        deleteTaskButton.isHidden = !isEditingTask
         
         // Setup priority views
         oddPriorityView.makeCircular()
@@ -91,7 +99,15 @@ class AddNewTaskViewController: UIViewController {
         calendar.appearance.caseOptions = [.headerUsesUpperCase, .weekdayUsesUpperCase]
         
         // Setup title
-        title = AppStringConstant.createTask
+        title = isEditingTask ? "Edit Task" : AppStringConstant.createTask
+        
+        // Disable inputs initially if editing
+        if isEditingTask {
+            disableInputs()
+            createTaskButton.setTitle("Save Task", for: .normal)
+        } else {
+            enableInputs()
+        }
     }
     
     private func setupNavigationBar() {
@@ -113,17 +129,59 @@ class AddNewTaskViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = dismissButton
     }
     
-    
     @objc func rightButtonTapped() {
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true)
     }
-    
-    
     
     private func setupLocationManager() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
+    }
+    
+    private func populateTaskDataIfNeeded() {
+        guard let taskItem = taskItem else { return }
+        
+        taskTitleTextField.text = taskItem.title
+        taskDescriptionTextView.text = taskItem.taskDescription
+        calendar.select(taskItem.dueDate)
+        
+        switch taskItem.priority {
+        case "Low":
+            selectPriorityStackView(lowPriorityStackView)
+        case "Medium":
+            selectPriorityStackView(evenPriorityStackView)
+        case "High":
+            selectPriorityStackView(highPriorityStackView)
+        default:
+            selectPriorityStackView(lowPriorityStackView)
+        }
+        
+        if let location = taskItem.locationReminder {
+            let taskLocation = Location(name: location.reminderText ?? "", coordinate: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude))
+            userCurrentLocation = taskLocation
+            setMapAnnotion(taskLocation)
+        }
+    }
+    
+    private func disableInputs() {
+        taskTitleTextField.isUserInteractionEnabled = false
+        taskDescriptionTextView.isUserInteractionEnabled = false
+        lowPriorityStackView.isUserInteractionEnabled = false
+        evenPriorityStackView.isUserInteractionEnabled = false
+        highPriorityStackView.isUserInteractionEnabled = false
+        calendar.isUserInteractionEnabled = false
+        mapView.isUserInteractionEnabled = false
+    }
+    
+    private func enableInputs() {
+        taskTitleTextField.isUserInteractionEnabled = true
+        taskDescriptionTextView.isUserInteractionEnabled = true
+        lowPriorityStackView.isUserInteractionEnabled = true
+        evenPriorityStackView.isUserInteractionEnabled = true
+        highPriorityStackView.isUserInteractionEnabled = true
+        calendar.isUserInteractionEnabled = true
+        mapView.isUserInteractionEnabled = true
     }
     
     // MARK: - Gesture Setup
@@ -140,6 +198,7 @@ class AddNewTaskViewController: UIViewController {
     // MARK: - Actions
     @objc private func priorityStackViewTapped(_ sender: UITapGestureRecognizer) {
         guard let selectedStackView = sender.view as? UIStackView else { return }
+        enableInputs() // Enable inputs on interaction
         selectPriorityStackView(selectedStackView)
     }
     
@@ -151,6 +210,7 @@ class AddNewTaskViewController: UIViewController {
     }
     
     private func selectPriorityStackView(_ selectedStackView: UIStackView) {
+        enableInputs() // Enable inputs on interaction
         // Reset all priority stack views
         lowPriorityStackView.layer.borderWidth = 0
         evenPriorityStackView.layer.borderWidth = 0
@@ -161,11 +221,74 @@ class AddNewTaskViewController: UIViewController {
         selectedStackView.layer.borderWidth = 1
         selectedStackView.layer.cornerRadius = 20
     }
-}
-
-// MARK: - MapSearchViewControllerDelegate
-extension AddNewTaskViewController: MapSearchViewControllerDelegate {
-    func didSelectLocation(_ location: Location) {
+    
+    @IBAction func didTapOnCreateTask(_ sender: UIButton) {
+        // Validate task title
+        guard let taskTitle = taskTitleTextField.text, !taskTitle.isEmpty else {
+            showAlert(message: "Please enter a task title.")
+            return
+        }
+        
+        let taskDescription = taskDescriptionTextView.text ?? ""
+        
+        guard let dueDate = calendar.selectedDate else {
+            showAlert(message: "Please select a due date.")
+            return
+        }
+        
+        // Determine priority
+        let priority: String
+        if lowPriorityStackView.layer.borderWidth > 0 {
+            priority = "Low"
+        } else if evenPriorityStackView.layer.borderWidth > 0 {
+            priority = "Medium"
+        } else if highPriorityStackView.layer.borderWidth > 0 {
+            priority = "High"
+        } else {
+            priority = "Low"
+        }
+        
+        // Task completion status
+        let isCompleted = false
+        
+        // Location reminder
+        var locationReminder: LocationEntity? = nil
+        if let userLocation = userCurrentLocation {
+            // Create a LocationEntity object and assign to locationReminder
+            locationReminder = LocationEntity(context: CoreDataManager.shared.context)
+            locationReminder?.reminderText = userLocation.name
+            locationReminder?.latitude = userLocation.coordinate.latitude
+            locationReminder?.longitude = userLocation.coordinate.longitude
+        }
+        
+        // Update or add the task item using CoreDataManager
+        if isEditingTask {
+            guard let taskItem = taskItem else { return }
+            let locationReminder = taskItem.locationReminder
+            CoreDataManager.shared.updateTaskItem(taskItem: taskItem, title: taskTitle, description: taskDescription, dueDate: dueDate, priority: priority, isCompleted: taskItem.isCompleted, isInProgress: taskItem.isInProgess,locationReminder: locationReminder)
+            
+            print(CoreDataManager.shared.fetchTaskItems())
+        } else {
+            
+            CoreDataManager.shared.addTaskItem(title: taskTitle, description: taskDescription, dueDate: dueDate, priority: priority, isCompleted: isCompleted, locationReminder: locationReminder)
+        }
+        self.dismiss(animated: true)
+    }
+    
+    
+    @IBAction func didTapOnDeleteTask(_ sender: UIButton) {
+        // Delete the task
+        self.dismiss(animated: true)
+    }
+    
+   
+    private func showAlert(message: String) {
+        let alertController = UIAlertController(title: "Tasky", message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    private func setMapAnnotion(_ location: Location) {
         DispatchQueue.main.async {
             // Add an annotation for the selected location on the map
             let annotation = MKPointAnnotation()
@@ -173,6 +296,7 @@ extension AddNewTaskViewController: MapSearchViewControllerDelegate {
             annotation.title = location.name
             self.mapView.removeAnnotations(self.mapView.annotations)
             self.mapView.addAnnotation(annotation)
+            self.userCurrentLocation = location
             
             // Center the map on the selected location
             let region = MKCoordinateRegion(
@@ -183,8 +307,15 @@ extension AddNewTaskViewController: MapSearchViewControllerDelegate {
             self.mapView.setRegion(region, animated: true)
         }
     }
+    
 }
 
+// MARK: - MapSearchViewControllerDelegate
+extension AddNewTaskViewController: MapSearchViewControllerDelegate {
+    func didSelectLocation(_ location: Location) {
+        setMapAnnotion(location)
+    }
+}
 
 // MARK: - CLLocationManagerDelegate
 extension AddNewTaskViewController: CLLocationManagerDelegate {
@@ -224,6 +355,17 @@ extension AddNewTaskViewController: CLLocationManagerDelegate {
         DispatchQueue.main.async {
             print("\(AppStringConstant.failedToFindUserLocation) \(error.localizedDescription)")
         }
+    }
+}
+
+// MARK: - UITextViewDelegate
+extension AddNewTaskViewController: UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
     }
 }
 

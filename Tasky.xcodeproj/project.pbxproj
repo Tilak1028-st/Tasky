@@ -7,11 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		720C3CB82C1E958800CCA348 /* Tasky.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 720C3CB62C1E958800CCA348 /* Tasky.xcdatamodeld */; };
+		720C3CC02C1E96EB00CCA348 /* LocationEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720C3CBC2C1E96EB00CCA348 /* LocationEntity+CoreDataClass.swift */; };
+		720C3CC12C1E96EB00CCA348 /* LocationEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720C3CBD2C1E96EB00CCA348 /* LocationEntity+CoreDataProperties.swift */; };
+		720C3CC32C1E987600CCA348 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720C3CC22C1E987600CCA348 /* CoreDataManager.swift */; };
+		720C3CC62C1E9CF000CCA348 /* TaskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 720C3CC52C1E9CF000CCA348 /* TaskTableViewCell.xib */; };
+		720C3CC72C1E9CF000CCA348 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720C3CC42C1E9CF000CCA348 /* TaskTableViewCell.swift */; };
 		72212CED2C1CB86B002CF2C8 /* AppStringConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72212CEC2C1CB86B002CF2C8 /* AppStringConstant.swift */; };
 		72212CF02C1CC52C002CF2C8 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72212CEF2C1CC52C002CF2C8 /* OnboardingCollectionViewCell.swift */; };
 		722F5E0F2C1DCAF800513608 /* UnderLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722F5E0E2C1DCAF800513608 /* UnderLineTextField.swift */; };
 		722F5E112C1DCC7D00513608 /* DismissAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722F5E102C1DCC7D00513608 /* DismissAnimator.swift */; };
 		722F5E132C1DCF6900513608 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722F5E122C1DCF6900513608 /* PlaceholderTextView.swift */; };
+		72727DF32C1ECBD800F7E910 /* TaskItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72727DF12C1ECBD800F7E910 /* TaskItem+CoreDataClass.swift */; };
+		72727DF42C1ECBD800F7E910 /* TaskItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72727DF22C1ECBD800F7E910 /* TaskItem+CoreDataProperties.swift */; };
+		72727DF62C1ED99200F7E910 /* noTask.json in Resources */ = {isa = PBXBuildFile; fileRef = 72727DF52C1ED99200F7E910 /* noTask.json */; };
 		72786A5A2C1CA48A00E7D20C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72786A592C1CA48A00E7D20C /* AppDelegate.swift */; };
 		72786A5C2C1CA48A00E7D20C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72786A5B2C1CA48A00E7D20C /* SceneDelegate.swift */; };
 		72786A5E2C1CA48A00E7D20C /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72786A5D2C1CA48A00E7D20C /* OnboardingViewController.swift */; };
@@ -48,11 +57,20 @@
 /* Begin PBXFileReference section */
 		3783951AEBB84B48A7CB6EC3 /* Pods-Tasky.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tasky.debug.xcconfig"; path = "Target Support Files/Pods-Tasky/Pods-Tasky.debug.xcconfig"; sourceTree = "<group>"; };
 		6A1C0F703428F6DF92D46192 /* Pods_TaskyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaskyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		720C3CB72C1E958800CCA348 /* Tasky.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tasky.xcdatamodel; sourceTree = "<group>"; };
+		720C3CBC2C1E96EB00CCA348 /* LocationEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LocationEntity+CoreDataClass.swift"; path = "Tasky/Models/LocationEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		720C3CBD2C1E96EB00CCA348 /* LocationEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LocationEntity+CoreDataProperties.swift"; path = "Tasky/Models/LocationEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		720C3CC22C1E987600CCA348 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		720C3CC42C1E9CF000CCA348 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		720C3CC52C1E9CF000CCA348 /* TaskTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskTableViewCell.xib; sourceTree = "<group>"; };
 		72212CEC2C1CB86B002CF2C8 /* AppStringConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStringConstant.swift; sourceTree = "<group>"; };
 		72212CEF2C1CC52C002CF2C8 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingCollectionViewCell.swift; path = Tasky/Cells/OnboardingCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		722F5E0E2C1DCAF800513608 /* UnderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineTextField.swift; sourceTree = "<group>"; };
 		722F5E102C1DCC7D00513608 /* DismissAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissAnimator.swift; sourceTree = "<group>"; };
 		722F5E122C1DCF6900513608 /* PlaceholderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
+		72727DF12C1ECBD800F7E910 /* TaskItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TaskItem+CoreDataClass.swift"; path = "Tasky/Models/TaskItem+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		72727DF22C1ECBD800F7E910 /* TaskItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TaskItem+CoreDataProperties.swift"; path = "Tasky/Models/TaskItem+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		72727DF52C1ED99200F7E910 /* noTask.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = noTask.json; sourceTree = "<group>"; };
 		72786A562C1CA48A00E7D20C /* Tasky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tasky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72786A592C1CA48A00E7D20C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72786A5B2C1CA48A00E7D20C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +128,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		720C3CB92C1E96A500CCA348 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				72727DF12C1ECBD800F7E910 /* TaskItem+CoreDataClass.swift */,
+				72727DF22C1ECBD800F7E910 /* TaskItem+CoreDataProperties.swift */,
+				720C3CBC2C1E96EB00CCA348 /* LocationEntity+CoreDataClass.swift */,
+				720C3CBD2C1E96EB00CCA348 /* LocationEntity+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		720C3CC82C1E9CFB00CCA348 /* TaskCell */ = {
+			isa = PBXGroup;
+			children = (
+				720C3CC42C1E9CF000CCA348 /* TaskTableViewCell.swift */,
+				720C3CC52C1E9CF000CCA348 /* TaskTableViewCell.xib */,
+			);
+			path = TaskCell;
+			sourceTree = "<group>";
+		};
 		72212CDF2C1CB247002CF2C8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +186,7 @@
 		72212CE32C1CB381002CF2C8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				720C3CB92C1E96A500CCA348 /* CoreData */,
 				72EBE7DC2C1CD967009A890E /* OnBoardingSlide.swift */,
 			);
 			name = Models;
@@ -164,6 +203,7 @@
 		72212CE52C1CB3A1002CF2C8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				72727DF52C1ED99200F7E910 /* noTask.json */,
 				72EBE7D82C1CD12C009A890E /* onboarding-1.json */,
 				72EBE7D42C1CCFF6009A890E /* onboarding-2.json */,
 				72EBE7D52C1CCFF6009A890E /* onboarding-3.json */,
@@ -175,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				72212CEF2C1CC52C002CF2C8 /* OnboardingCollectionViewCell.swift */,
+				720C3CC82C1E9CFB00CCA348 /* TaskCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -186,6 +227,7 @@
 				722F5E102C1DCC7D00513608 /* DismissAnimator.swift */,
 				722F5E122C1DCF6900513608 /* PlaceholderTextView.swift */,
 				72DDDBAE2C1E227C005A3D61 /* UserDefaultsManager.swift */,
+				720C3CC22C1E987600CCA348 /* CoreDataManager.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -226,6 +268,7 @@
 				72212CE52C1CB3A1002CF2C8 /* Resources */,
 				72786A622C1CA48F00E7D20C /* Assets.xcassets */,
 				72786A672C1CA48F00E7D20C /* Info.plist */,
+				720C3CB62C1E958800CCA348 /* Tasky.xcdatamodeld */,
 			);
 			path = Tasky;
 			sourceTree = "<group>";
@@ -380,9 +423,11 @@
 				72786A632C1CA48F00E7D20C /* Assets.xcassets in Resources */,
 				72786A662C1CA48F00E7D20C /* Base in Resources */,
 				72786A612C1CA48A00E7D20C /* Base in Resources */,
+				72727DF62C1ED99200F7E910 /* noTask.json in Resources */,
 				72EBE7D62C1CCFF6009A890E /* onboarding-2.json in Resources */,
 				72EBE7D92C1CD12C009A890E /* onboarding-1.json in Resources */,
 				72EBE7D72C1CCFF6009A890E /* onboarding-3.json in Resources */,
+				720C3CC62C1E9CF000CCA348 /* TaskTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,11 +517,18 @@
 				72ED982E2C1D6700009B4F23 /* HomeViewController.swift in Sources */,
 				72786A5E2C1CA48A00E7D20C /* OnboardingViewController.swift in Sources */,
 				72212CF02C1CC52C002CF2C8 /* OnboardingCollectionViewCell.swift in Sources */,
+				720C3CC72C1E9CF000CCA348 /* TaskTableViewCell.swift in Sources */,
+				720C3CC32C1E987600CCA348 /* CoreDataManager.swift in Sources */,
+				720C3CB82C1E958800CCA348 /* Tasky.xcdatamodeld in Sources */,
 				722F5E0F2C1DCAF800513608 /* UnderLineTextField.swift in Sources */,
 				72786A5A2C1CA48A00E7D20C /* AppDelegate.swift in Sources */,
 				72ED98322C1D671B009B4F23 /* DashboardViewController.swift in Sources */,
+				72727DF32C1ECBD800F7E910 /* TaskItem+CoreDataClass.swift in Sources */,
+				72727DF42C1ECBD800F7E910 /* TaskItem+CoreDataProperties.swift in Sources */,
 				72ED98302C1D670F009B4F23 /* AddNewTaskViewController.swift in Sources */,
 				72ED98342C1D67B5009B4F23 /* TaskViewController.swift in Sources */,
+				720C3CC02C1E96EB00CCA348 /* LocationEntity+CoreDataClass.swift in Sources */,
+				720C3CC12C1E96EB00CCA348 /* LocationEntity+CoreDataProperties.swift in Sources */,
 				722F5E112C1DCC7D00513608 /* DismissAnimator.swift in Sources */,
 				72786A5C2C1CA48A00E7D20C /* SceneDelegate.swift in Sources */,
 				72DDDBAB2C1DFE90005A3D61 /* MapSearchViewController.swift in Sources */,
@@ -648,11 +700,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 8YP937HXPQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Tasky/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "We use Face ID to authenticate you and provide secure access to your tasks.";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need your location to show your current position on the map and to provide location-based services.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to show your current position on the map and to provide location-based services.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -666,9 +721,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com..Tasky;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appfinity.TonallyReal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Tonally real development profile";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -682,11 +738,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 8YP937HXPQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Tasky/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "We use Face ID to authenticate you and provide secure access to your tasks.";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need your location to show your current position on the map and to provide location-based services.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to show your current position on the map and to provide location-based services.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -700,9 +759,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com..Tasky;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appfinity.TonallyReal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Tonally real development profile";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -778,6 +838,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		720C3CB62C1E958800CCA348 /* Tasky.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				720C3CB72C1E958800CCA348 /* Tasky.xcdatamodel */,
+			);
+			currentVersion = 720C3CB72C1E958800CCA348 /* Tasky.xcdatamodel */;
+			name = Tasky.xcdatamodeld;
+			path = /Users/tilakshakya/Documents/Project/Tasky/Tasky/Tasky.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 72786A4E2C1CA48A00E7D20C /* Project object */;
 }

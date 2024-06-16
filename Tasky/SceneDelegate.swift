@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import LocalAuthentication
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+    private var hasAuthenticatedOnce = false // Track if authentication has been attempted
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -27,40 +29,72 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         } else {
             // Move directly to dashboard
             let taskViewController = storyboard.instantiateViewController(withIdentifier: "TaskViewController")
-            window.rootViewController =  UINavigationController(rootViewController: taskViewController)
+            window.rootViewController =  taskViewController
         }
         
         window.makeKeyAndVisible()
     }
 
-    func sceneDidDisconnect(_ scene: UIScene) {
-        // Called as the scene is being released by the system.
-        // This occurs shortly after the scene enters the background, or when its session is discarded.
-        // Release any resources associated with this scene that can be re-created the next time the scene connects.
-        // The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).
-    }
-
     func sceneDidBecomeActive(_ scene: UIScene) {
-        // Called when the scene has moved from an inactive state to an active state.
-        // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+        // Check if authentication has already been attempted
+        if !hasAuthenticatedOnce {
+            authenticateUser()
+        }
     }
 
-    func sceneWillResignActive(_ scene: UIScene) {
-        // Called when the scene will move from an active state to an inactive state.
-        // This may occur due to temporary interruptions (ex. an incoming phone call).
+    private func authenticateUser() {
+        let context = LAContext()
+        var error: NSError?
+
+        // Check if the device can perform Face ID authentication
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+            let reason = "Authenticate with Face ID to access the app."
+
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
+                DispatchQueue.main.async {
+                    self.hasAuthenticatedOnce = true // Mark authentication as attempted
+
+                    if success {
+                        // Authentication was successful
+                        if UserDefaultsManager.shared.hasCompletedIntroduction()  {
+                            self.proceedToDashboard()
+                        }
+                    } else {
+                        // Authentication failed
+                        self.showAuthenticationFailedAlert()
+                    }
+                }
+            }
+        } else {
+            // Face ID is not available
+            showNoBiometricsAlert()
+        }
+    }
+    
+    private func proceedToDashboard() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let taskViewController = storyboard.instantiateViewController(withIdentifier: "TaskViewController")
+        
+        // Check if there is a presented view controller
+        if let presentedViewController = window?.rootViewController?.presentedViewController {
+            if presentedViewController is TaskViewController {
+            } else {
+                window?.rootViewController = taskViewController
+                window?.makeKeyAndVisible()
+            }
+        }
     }
 
-    func sceneWillEnterForeground(_ scene: UIScene) {
-        // Called as the scene transitions from the background to the foreground.
-        // Use this method to undo the changes made on entering the background.
+
+    private func showAuthenticationFailedAlert() {
+        let alert = UIAlertController(title: "Authentication Failed", message: "Unable to authenticate using Face ID.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        window?.rootViewController?.present(alert, animated: true, completion: nil)
     }
 
-    func sceneDidEnterBackground(_ scene: UIScene) {
-        // Called as the scene transitions from the foreground to the background.
-        // Use this method to save data, release shared resources, and store enough scene-specific state information
-        // to restore the scene back to its current state.
+    private func showNoBiometricsAlert() {
+        let alert = UIAlertController(title: "No Biometrics Available", message: "Your device does not support Face ID.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        window?.rootViewController?.present(alert, animated: true, completion: nil)
     }
-
-
 }
-

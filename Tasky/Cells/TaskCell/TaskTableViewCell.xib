@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskTableViewCell" rowHeight="96" id="KGk-i7-Jjw" customClass="TaskTableViewCell" customModule="Tasky" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="434" height="96"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="434" height="96"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="69e-7N-imL">
+                        <rect key="frame" x="20" y="5" width="394" height="81"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BcG-4n-nMl">
+                                <rect key="frame" x="10.000000000000002" y="22.666666666666671" width="25.666666666666671" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="circle" catalog="system" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapOnTickButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="24e-Yy-UsW"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rX-13-JqJ">
+                                <rect key="frame" x="45.666666666666657" y="29.333333333333336" width="338.33333333333337" height="27.333333333333336"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1rX-13-JqJ" firstAttribute="leading" secondItem="BcG-4n-nMl" secondAttribute="trailing" constant="10" id="Cge-Vb-YM0"/>
+                            <constraint firstItem="BcG-4n-nMl" firstAttribute="leading" secondItem="69e-7N-imL" secondAttribute="leading" constant="10" id="Y4O-gt-Md2"/>
+                            <constraint firstItem="BcG-4n-nMl" firstAttribute="centerY" secondItem="69e-7N-imL" secondAttribute="centerY" id="dF1-nY-U7k"/>
+                            <constraint firstAttribute="trailing" secondItem="1rX-13-JqJ" secondAttribute="trailing" constant="10" id="wXi-Mt-pnB"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="69e-7N-imL" secondAttribute="trailing" constant="20" id="5C1-ga-Bz1"/>
+                    <constraint firstItem="69e-7N-imL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="q4I-1c-Bie"/>
+                    <constraint firstItem="1rX-13-JqJ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="qX2-jX-mKt"/>
+                    <constraint firstAttribute="bottom" secondItem="69e-7N-imL" secondAttribute="bottom" constant="10" id="r1e-ur-7el"/>
+                    <constraint firstItem="69e-7N-imL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="wFo-pG-vph"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="mainView" destination="69e-7N-imL" id="PWj-nm-LqW"/>
+                <outlet property="tickButton" destination="BcG-4n-nMl" id="Imw-mF-smg"/>
+                <outlet property="titleLabel" destination="1rX-13-JqJ" id="iuX-3j-pRS"/>
+            </connections>
+            <point key="canvasLocation" x="167.93893129770993" y="38.028169014084511"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="circle" catalog="system" width="128" height="123"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

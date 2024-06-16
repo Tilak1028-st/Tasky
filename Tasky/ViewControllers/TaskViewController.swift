@@ -129,21 +129,37 @@ class TaskViewController: UITabBarController {
     
     
     @objc func addNewTaskTapped() {
-        let addNewTaskVc = self.storyboard?.instantiateViewController(identifier: AppStringConstant.addNewTaskViewController) as! AddNewTaskViewController
+//        let addNewTaskVc = self.storyboard?.instantiateViewController(identifier: AppStringConstant.addNewTaskViewController) as! AddNewTaskViewController
+//        
+//        // Customize the navigation controller's navigation bar appearance
+//        self.navigationController?.navigationBar.tintColor = .white
+//        self.navigationController?.navigationBar.barTintColor = .black
+//        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+//        
+//        // Customize the transition style for AddNewTaskViewController
+//        let transition = CATransition()
+//        transition.duration = 0.25
+//        transition.type = .moveIn
+//        transition.subtype = .fromTop
+//        self.navigationController?.view.layer.add(transition, forKey: kCATransition)
+//        
+//        // Push the AddNewTaskViewController onto the navigation stack
+//        self.navigationController?.pushViewController(addNewTaskVc, animated: false)
         
-        // Customize the navigation controller's navigation bar appearance
-        self.navigationController?.navigationBar.tintColor = .white
-        self.navigationController?.navigationBar.barTintColor = .black
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         
-        // Customize the transition style for AddNewTaskViewController
-        let transition = CATransition()
-        transition.duration = 0.25
-        transition.type = .moveIn
-        transition.subtype = .fromTop
-        self.navigationController?.view.layer.add(transition, forKey: kCATransition)
-        
-        // Push the AddNewTaskViewController onto the navigation stack
-        self.navigationController?.pushViewController(addNewTaskVc, animated: false) // Set animated to false if using custom transition
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                guard let addNewTaskVc = storyboard.instantiateViewController(withIdentifier: "AddNewTaskViewController") as? AddNewTaskViewController else {
+                    return
+                }
+
+                // Customize the navigation bar appearance for AddNewTaskViewController
+                let navController = UINavigationController(rootViewController: addNewTaskVc)
+                navController.navigationBar.tintColor = .white
+                navController.navigationBar.barTintColor = .black
+                navController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+
+                // Push AddNewTaskViewController onto the navigation stack
+                navController.modalPresentationStyle = .fullScreen
+                self.present(navController, animated: true, completion: nil)// Set animated to false if using custom transition
     }
 }

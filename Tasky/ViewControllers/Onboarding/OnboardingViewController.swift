@@ -28,7 +28,7 @@ class OnboardingViewController: UIViewController {
     
     private func handleActionButtonTapped(at indexPath: IndexPath) {
         if indexPath.item == slides.count - 1 {
-            moveToDashboard()
+            moveToTabBar()
         } else {
             let nextItem = indexPath.item + 1
             let nextIndexPath = IndexPath(item: nextItem, section: 0)
@@ -36,12 +36,12 @@ class OnboardingViewController: UIViewController {
         }
     }
     
-    private func moveToDashboard() {
+    private func moveToTabBar() {
         UserDefaultsManager.shared.setHasCompletedIntroduction(true)
         let taskViewController = UIStoryboard(name: AppStringConstant.main, bundle: nil).instantiateViewController(identifier: AppStringConstant.taskViewController)
         
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window {
-            window.rootViewController = UINavigationController(rootViewController: taskViewController)
+            window.rootViewController = taskViewController
             UIView.transition(with: window, duration: 0.25, options: .transitionCrossDissolve, animations: nil, completion: nil)
         }
     }
