@@ -330,7 +330,6 @@ class AddNewTaskViewController: UIViewController {
             guard let taskItem = taskItem else { return }
             let locationReminder = locationReminder
             
-            print( "Edit location: \(locationReminder)")
             CoreDataManager.shared.updateTaskItem(taskItem: taskItem, title: taskTitle, description: taskDescription, dueDate: mergedDate, priority: priority, isCompleted: taskItem.isCompleted, isInProgress: taskItem.isInProgess, locationReminder: locationReminder)
             
             print(CoreDataManager.shared.fetchTaskItems())
@@ -338,9 +337,9 @@ class AddNewTaskViewController: UIViewController {
             CoreDataManager.shared.addTaskItem(title: taskTitle, description: taskDescription, dueDate: mergedDate, priority: priority, isCompleted: isCompleted, locationReminder: locationReminder)
         }
         
-        print("Due Date: \(dueDate)")
+        print("Due Date: \(mergedDate)")
         
-        NotificationManager.shared.scheduleNotification(taskTitle: taskTitle, taskDescription: taskDescription, dueDate: dueDate)
+        NotificationManager.shared.scheduleNotification(taskTitle: taskTitle, taskDescription: taskDescription, dueDate: mergedDate)
         self.dismiss(animated: true)
     }
     
