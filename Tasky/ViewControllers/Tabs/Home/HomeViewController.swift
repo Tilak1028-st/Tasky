@@ -145,21 +145,21 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if !inProgressTasks.isEmpty {
             if section == 0 {
-                return "In Progress"
+                return AppStringConstant.inProgress
             } else if section == 1  && !upcomingTasks.isEmpty {
-                return "Upcoming"
+                return AppStringConstant.upcoming
             } else if section == 1  && upcomingTasks.isEmpty {
-                return "Completed"
+                return AppStringConstant.completed
             } else if section == 2 {
-                return "Completed"
+                return AppStringConstant.completed
             }
         } else {
             if section == 0 && !upcomingTasks.isEmpty {
-                return "Upcoming"
+                return AppStringConstant.upcoming
             } else if section == 0 && upcomingTasks.isEmpty {
-                return "Completed"
+                return AppStringConstant.completed
             } else if section == 1 && !completedTasks.isEmpty {
-                return "Completed"
+                return AppStringConstant.completed
             }
         }
         
