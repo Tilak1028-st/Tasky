@@ -1,4 +1,4 @@
-![Simulator Screenshot - iPhone 11 Pro Max - 2024-06-17 at 01 09 41](https://github.com/Tilak1028-st/Tasky/assets/75114840/dda4b671-65c8-4983-b752-7302b7e9c1f5)# Tasky: Smart Task Manager
+# Tasky: Smart Task Manager
 
 ## Overview
 The Smart Task Manager is a comprehensive iOS application designed to help users manage their tasks efficiently. It allows users to create, read, update, and delete tasks, set priority levels, and receive location-based reminders. The app also includes a dashboard to visualize task statistics and progress. This README provides an overview of the app's features, design choices, and implementation details.
