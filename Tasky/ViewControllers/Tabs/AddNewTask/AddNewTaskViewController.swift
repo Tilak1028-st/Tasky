@@ -9,6 +9,7 @@ import UIKit
 import FSCalendar
 import MapKit
 import CoreLocation
+import IQKeyboardManagerSwift
 
 
 struct Location {
@@ -34,6 +35,7 @@ class AddNewTaskViewController: UIViewController {
     @IBOutlet weak var oddPriorityView: UIView!
     @IBOutlet weak var lowPriorityView: UIView!
     @IBOutlet weak var evenPriorityView: UIView!
+    @IBOutlet weak var timeTextField: UnderlineTextField!
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var mapView: MKMapView!
     
@@ -42,6 +44,8 @@ class AddNewTaskViewController: UIViewController {
     var userCurrentLocation: Location?
     var isEditingTask = false
     var taskItem: TaskItem?
+    var timePicker: UIDatePicker!
+    var selectedDateAndTime: Date?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -64,6 +68,26 @@ class AddNewTaskViewController: UIViewController {
         taskDescriptionTextView.applyBorder(color: UIColor.gray, width: 1)
         taskDescriptionTextView.applyCornerRadius(20)
         taskDescriptionTextView.delegate = self
+        
+        // Setp TimeTextfield
+        
+        timeTextField.applyBorder(color: UIColor.gray, width: 1)
+        timeTextField.applyCornerRadius(10)
+        timeTextField.placeholder = AppStringConstant.selectTime
+        timePicker = UIDatePicker()
+        timePicker.datePickerMode = .time
+        timePicker.addTarget(self, action: #selector(timeChanged), for: .valueChanged)
+        timeTextField.inputView = timePicker
+        
+        // Create a toolbar with a Done button
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneButtonTapped))
+        toolbar.setItems([doneButton], animated: false)
+        toolbar.isUserInteractionEnabled = true
+        
+        // Set the toolbar as the accessory view for the UITextField
+        timeTextField.inputAccessoryView = toolbar
         
         // Setup createTaskButton
         createTaskButton.applyCornerRadius(20)
@@ -133,6 +157,21 @@ class AddNewTaskViewController: UIViewController {
         self.dismiss(animated: true)
     }
     
+    @objc func timeChanged() {
+        // Update the selectedDateAndTime with the date and time from the picker
+        selectedDateAndTime = timePicker.date
+        
+        // Format the date and time and set it as the text of the UITextField
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        timeTextField.text = formatter.string(from: timePicker.date)
+    }
+
+       @objc func doneButtonTapped() {
+           // Dismiss the picker when the Done button is tapped
+           timeTextField.resignFirstResponder()
+       }
+    
     private func setupLocationManager() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -145,6 +184,9 @@ class AddNewTaskViewController: UIViewController {
         taskTitleTextField.text = taskItem.title
         taskDescriptionTextView.text = taskItem.taskDescription
         calendar.select(taskItem.dueDate)
+        selectedDateAndTime = taskItem.dueDate
+        timePicker.date = taskItem.dueDate ?? Date()
+        timeChanged()
         
         switch taskItem.priority {
         case "Low":
@@ -236,6 +278,28 @@ class AddNewTaskViewController: UIViewController {
             return
         }
         
+        // Merge the selected date and time
+        guard let selectedDateAndTime = selectedDateAndTime else {
+            showAlert(message: "Please select a date and time.")
+            return
+        }
+        
+        let calendar = Calendar.current
+        let dueDateComponents = calendar.dateComponents([.year, .month, .day], from: dueDate)
+        let timeComponents = calendar.dateComponents([.hour, .minute], from: selectedDateAndTime)
+        var mergedComponents = DateComponents()
+        mergedComponents.year = dueDateComponents.year
+        mergedComponents.month = dueDateComponents.month
+        mergedComponents.day = dueDateComponents.day
+        mergedComponents.hour = timeComponents.hour
+        mergedComponents.minute = timeComponents.minute
+        
+        guard let mergedDate = calendar.date(from: mergedComponents) else {
+            showAlert(message: "Failed to merge date and time.")
+            return
+        }
+        
+        
         // Determine priority
         let priority: String
         if lowPriorityStackView.layer.borderWidth > 0 {
@@ -264,18 +328,19 @@ class AddNewTaskViewController: UIViewController {
         // Update or add the task item using CoreDataManager
         if isEditingTask {
             guard let taskItem = taskItem else { return }
-            let locationReminder = taskItem.locationReminder
-            CoreDataManager.shared.updateTaskItem(taskItem: taskItem, title: taskTitle, description: taskDescription, dueDate: dueDate, priority: priority, isCompleted: taskItem.isCompleted, isInProgress: taskItem.isInProgess,locationReminder: locationReminder)
+            let locationReminder = locationReminder
+            
+            print( "Edit location: \(locationReminder)")
+            CoreDataManager.shared.updateTaskItem(taskItem: taskItem, title: taskTitle, description: taskDescription, dueDate: mergedDate, priority: priority, isCompleted: taskItem.isCompleted, isInProgress: taskItem.isInProgess, locationReminder: locationReminder)
             
             print(CoreDataManager.shared.fetchTaskItems())
         } else {
-            
-            CoreDataManager.shared.addTaskItem(title: taskTitle, description: taskDescription, dueDate: dueDate, priority: priority, isCompleted: isCompleted, locationReminder: locationReminder)
+            CoreDataManager.shared.addTaskItem(title: taskTitle, description: taskDescription, dueDate: mergedDate, priority: priority, isCompleted: isCompleted, locationReminder: locationReminder)
         }
         
         print("Due Date: \(dueDate)")
         
-        NotificationManager.shared.scheduleNotificationAfterTwoMinutes(taskTitle: taskTitle, taskDescription: taskDescription)
+        NotificationManager.shared.scheduleNotification(taskTitle: taskTitle, taskDescription: taskDescription, dueDate: dueDate)
         self.dismiss(animated: true)
     }
     

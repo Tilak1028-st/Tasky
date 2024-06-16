@@ -3,24 +3,28 @@ PODS:
     - DGCharts/Core (= 5.1.0)
   - DGCharts/Core (5.1.0)
   - FSCalendar (2.8.4)
+  - IQKeyboardManagerSwift (6.5.16)
   - lottie-ios (4.3.4)
 
 DEPENDENCIES:
   - DGCharts
   - FSCalendar
+  - IQKeyboardManagerSwift
   - lottie-ios
 
 SPEC REPOS:
   trunk:
     - DGCharts
     - FSCalendar
+    - IQKeyboardManagerSwift
     - lottie-ios
 
 SPEC CHECKSUMS:
   DGCharts: 1c6daf585b6cfc78807af44ea690d357c410627f
   FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
+  IQKeyboardManagerSwift: 12d89768845bb77b55cc092ecc2b1f9370f06b76
   lottie-ios: 3d98679b41fa6fd6aff2352b3953dbd3df8a397e
 
-PODFILE CHECKSUM: 8edeaff3d2b812a0173a25d40f7a2716d15f42f9
+PODFILE CHECKSUM: f3f6968ce7997919841cd5085f838b0f510a30a3
 
 COCOAPODS: 1.14.3

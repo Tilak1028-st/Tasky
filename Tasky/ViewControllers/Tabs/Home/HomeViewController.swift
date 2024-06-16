@@ -39,8 +39,8 @@ class HomeViewController: UIViewController {
     
     private func setUpUI() {
         self.title = "Task Manager"
-        self.navigationController?.navigationBar.prefersLargeTitles = false
-        self.navigationItem.largeTitleDisplayMode = .never
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.largeTitleDisplayMode = .always
         
         taskTableView.register(UINib(nibName: AppStringConstant.taskTableViewCell, bundle: nil), forCellReuseIdentifier: AppStringConstant.taskTableViewCell)
         taskTableView.separatorColor = UIColor.clear
@@ -276,13 +276,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         deleteAction.image = UIImage(systemName: ImageConstant.trash)
         deleteAction.backgroundColor = UIColor(red: 255/255, green: 181/255, blue: 45/255, alpha: 1)
         
-        // Edit action
-        let editAction = UIContextualAction(style: .normal, title: nil) { (action, view, handler) in
-            // Implement edit action logic
-            handler(true)
-        }
-        editAction.image = UIImage(systemName: ImageConstant.pencil)
-        editAction.backgroundColor = .blue
         
         // Mark as completed action
         let completeAction = UIContextualAction(style: .normal, title: nil) { (action, view, handler) in
@@ -292,7 +285,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         completeAction.image = UIImage(systemName: ImageConstant.checkmarkCircle)
         completeAction.backgroundColor = .systemGreen
         
-        let configuration = UISwipeActionsConfiguration(actions: [deleteAction, editAction, completeAction])
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction, completeAction])
         configuration.performsFirstActionWithFullSwipe = false
         
         return configuration

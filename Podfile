@@ -10,6 +10,7 @@ target 'Tasky' do
   pod 'lottie-ios'
   pod 'FSCalendar'
   pod 'DGCharts'
+  pod 'IQKeyboardManagerSwift'
 
   target 'TaskyTests' do
     inherit! :search_paths

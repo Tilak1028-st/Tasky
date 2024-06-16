@@ -8,9 +8,10 @@
 import UIKit
 import DGCharts
 import CoreData
+import Lottie
 
 class DashboardViewController: UIViewController {
-    
+
     // MARK: - Properties
     
     var scrollView: UIScrollView!
@@ -18,6 +19,8 @@ class DashboardViewController: UIViewController {
     var pieChartView: PieChartView!
     var stackedBarChartView: BarChartView!
     var lineChartView: LineChartView!
+    var noTaskView: LottieAnimationView!
+    var noTaskLabel: UILabel!
     
     // MARK: - Lifecycle Methods
     
@@ -28,6 +31,7 @@ class DashboardViewController: UIViewController {
         setupPieChart()
         setupStackedBarChart()
         setupLineChart()
+        setupNoTaskView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,6 +43,8 @@ class DashboardViewController: UIViewController {
     
     private func setUpUI() {
         self.title = "Dashboard"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.largeTitleDisplayMode = .always
     }
     
     private func setupScrollView() {
@@ -61,6 +67,31 @@ class DashboardViewController: UIViewController {
             contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
+        ])
+    }
+    
+    private func setupNoTaskView() {
+        noTaskView = LottieAnimationView(name: "noTask")
+        noTaskView.translatesAutoresizingMaskIntoConstraints = false
+        noTaskView.loopMode = .loop
+        noTaskView.isHidden = true
+        view.addSubview(noTaskView)
+        
+        noTaskLabel = UILabel()
+        noTaskLabel.text = "No data available"
+        noTaskLabel.font = UIFont(name: "Avenir Next Heavy", size: 22.0)
+        noTaskLabel.textAlignment = .center
+        noTaskLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(noTaskLabel)
+        
+        NSLayoutConstraint.activate([
+            noTaskView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            noTaskView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -20),
+           // noTaskView.widthAnchor.constraint(equalToConstant: 300),
+            noTaskView.heightAnchor.constraint(equalToConstant: 325),
+            
+            noTaskLabel.topAnchor.constraint(equalTo: noTaskView.bottomAnchor, constant: 0),
+            noTaskLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
     
@@ -144,9 +175,14 @@ class DashboardViewController: UIViewController {
             }
             
             DispatchQueue.main.async {
-                self.updatePieChart(completed: completedTasksCount, upcoming: upcomingTasksCount, inProgress: inProgressTasksCount)
-                self.updateStackedBarChart(completed: completedTasksCount, upcoming: upcomingTasksCount, inProgress: inProgressTasksCount)
-                self.updateLineChart(completed: completedTasksCount, upcoming: upcomingTasksCount, inProgress: inProgressTasksCount)
+                if completedTasksCount == 0 && upcomingTasksCount == 0 && inProgressTasksCount == 0 {
+                    self.showNoTaskAnimation()
+                } else {
+                    self.hideNoTaskAnimation()
+                    self.updatePieChart(completed: completedTasksCount, upcoming: upcomingTasksCount, inProgress: inProgressTasksCount)
+                    self.updateStackedBarChart(completed: completedTasksCount, upcoming: upcomingTasksCount, inProgress: inProgressTasksCount)
+                    self.updateLineChart(completed: completedTasksCount, upcoming: upcomingTasksCount, inProgress: inProgressTasksCount)
+                }
             }
         }
     }
@@ -199,7 +235,6 @@ class DashboardViewController: UIViewController {
         // Animate the chart
         pieChartView.animate(xAxisDuration: 1.4, easingOption: .easeOutBack)
     }
-    
     
     func updateStackedBarChart(completed: Int, upcoming: Int, inProgress: Int) {
         let completedEntry = BarChartDataEntry(x: 0, yValues: [Double(completed)])
@@ -257,5 +292,27 @@ class DashboardViewController: UIViewController {
         
         let rightAxis = lineChartView.rightAxis
         rightAxis.enabled = false
+    }
+    
+    // MARK: - No Task Animation
+    
+    func showNoTaskAnimation() {
+        noTaskView.isHidden = false
+        noTaskLabel.isHidden = false
+        noTaskView.play()
+        
+        pieChartView.isHidden = true
+        stackedBarChartView.isHidden = true
+        lineChartView.isHidden = true
+    }
+    
+    func hideNoTaskAnimation() {
+        noTaskView.isHidden = true
+        noTaskLabel.isHidden = true
+        noTaskView.stop()
+        
+        pieChartView.isHidden = false
+        stackedBarChartView.isHidden = false
+        lineChartView.isHidden = false
     }
 }
