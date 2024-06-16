@@ -18,7 +18,11 @@ struct AppStringConstant {
     static var next = "Next"
     static var getStarted = "Get Started"
     static var main = "Main"
-    
+    static var createTask = "Create Task"
+    static var currentLocation = "Current Location"
+    static var locationAccessDenied = "Location access was restricted or denied."
+    static var failedToFindUserLocation = "Failed to find user's location:"
+    static var search = "Search"
     
     
     // View Controllers
@@ -26,12 +30,15 @@ struct AppStringConstant {
     static var homeViewController = "HomeViewController"
     static var addNewTaskViewController = "AddNewTaskViewController"
     static var dashboardViewController = "DashboardViewController"
+    static var mapSearchViewController = "MapSearchViewController"
 }
 
 struct ImageConstant {
     static var plusCircleFill = "plus.circle.fill"
+    static var xmarkCircleFill = "xmark.circle.fill"
 }
 
 struct AppErrorConstant {
     static var animationLoadingError = "Failed to load animation with asset name"
+    static var searchError = "Search error:"
 }
