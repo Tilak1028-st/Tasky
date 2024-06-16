@@ -24,7 +24,7 @@ The app's user interface follows a clean and modern design using UIKit, ensuring
 
 Here are some screenshots of the Smart Task Manager app:
 
-<div style="display: flex; justify-content: space-around; align-items: center;">
+<div style="display: flex; justify-content: space-around;">
     <div style="text-align: center;">
         <p><strong>Home Screen</strong></p>
         <img src="https://github.com/Tilak1028-st/Tasky/assets/75114840/13247522-80df-4b78-84e8-6f505d807c3b" width="230" height="470" alt="Home Screen">
@@ -42,6 +42,8 @@ Here are some screenshots of the Smart Task Manager app:
         <img src="https://github.com/Tilak1028-st/Tasky/assets/75114840/cb9b31e3-6e9f-4580-914f-d0a8ff0be026" width="230" height="470" alt="Dashboard Screen">
     </div>
 </div>
+
+
 
 ## Implementation Details
 
