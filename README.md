@@ -25,20 +25,20 @@ The app's user interface follows a clean and modern design using UIKit, ensuring
 Here are some screenshots of the Smart Task Manager app:
 
 - **Home Screen:**
-  ![Home Screen] <img src="https://github.com/Tilak1028-st/Tasky/assets/75114840/13247522-80df-4b78-84e8-6f505d807c3b" width=230 height=470>
+  <img src="https://github.com/Tilak1028-st/Tasky/assets/75114840/13247522-80df-4b78-84e8-6f505d807c3b" width=230 height=470>
+  
 - **Task Detail Screen:**
-  ![Task Detail Screen]![Simulator Screenshot - iPhone 11 Pro Max - 2024-06-17 at 01 12 04](https://github.com/Tilak1028-st/Tasky/assets/75114840/eab4e8cb-6264-4b03-8b9d-d82d530905c0)
+-  <img src="https://github.com/Tilak1028-st/Tasky/assets/75114840/eab4e8cb-6264-4b03-8b9d-d82d530905c0" width=230 height=470>
 
 
 - **Add/Edit Task Screen:**
   ![Add/Edit Task Screen](screenshots/add_edit_task_screen.png)
 
 - **Calendar Screen:**
-  ![Calendar Screen]![Simulator Screenshot - iPhone 11 Pro Max - 2024-06-17 at 01 09 46](https://github.com/Tilak1028-st/Tasky/assets/75114840/730992b0-9389-40f2-8b86-b019b9637f1f)
-
+- <img src="https://github.com/Tilak1028-st/Tasky/assets/75114840/730992b0-9389-40f2-8b86-b019b9637f1f" width=230 height=470>
 
 - **Dashboard Screen:**
-  ![Dashboard Screen]![Simulator Screenshot - iPhone 11 Pro Max - 2024-06-17 at 01 09 36](https://github.com/Tilak1028-st/Tasky/assets/75114840/cb9b31e3-6e9f-4580-914f-d0a8ff0be026)
+- <img src="https://github.com/Tilak1028-st/Tasky/assets/75114840/cb9b31e3-6e9f-4580-914f-d0a8ff0be026" width=230 height=470>
 
 ## Implementation Details
 
