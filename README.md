@@ -1,86 +1,89 @@
-# Smart Task Manager iOS App
+# Smart Task Manager
 
 ## Overview
-The **Smart Task Manager** is a comprehensive iOS application designed to help users manage their tasks efficiently. This app allows users to create, read, update, and delete tasks with various attributes like title, description, due date, priority level, and location-based reminders. It also includes a dashboard for visualizing task statistics and progress.
+The Smart Task Manager is a comprehensive iOS application designed to help users manage their tasks efficiently. It allows users to create, read, update, and delete tasks, set priority levels, and receive location-based reminders. The app also includes a dashboard to visualize task statistics and progress. This README provides an overview of the app's features, design choices, and implementation details.
 
 ## Features
-- **CRUD Operations:** Users can create, read, update, and delete tasks.
-- **Task Attributes:** Each task includes a title, description, due date, priority level (High, Medium, Low), and location-based reminders.
-- **Dashboard:** Visual representation of task statistics including completed tasks, pending tasks, and task priority distribution.
-- **Facial Recognition:** Utilizes Apple's Face ID for unlocking the app or specific features.
-- **Push Notifications:** Reminders for upcoming tasks.
-- **Local Storage:** Uses Core Data for storing tasks locally.
-- **Third-Party Libraries:** Integrates libraries such as Alamofire for network requests, SDWebImage for image handling, and MapKit for location features.
+- **Task Management:** Create, read, update, and delete tasks.
+- **Task Details:** Each task includes a title, description, due date, priority level (High, Medium, Low), and location-based reminders.
+- **Dashboard:** Visualize task statistics such as completed tasks, pending tasks, and task priority distribution.
+- **Face ID Integration:** Use biometric authentication for enhanced security.
+- **Push Notifications:** Receive task reminders via push notifications.
 
 ## UI Design
-The app follows a clean and intuitive UI design as per the provided mockups.
+The app's user interface follows a clean and modern design using UIKit, ensuring a smooth and intuitive user experience.
 
-### Home Screen
-- Displays a list of tasks categorized into "In Progress", "Upcoming", and "Completed".
-- Floating Action Button (FAB) for adding new tasks.
-- Bottom navigation bar with icons for Task Manager, Calendar, and Dashboard.
+### Screens
+1. **Home Screen:** Displays a list of tasks with options to add, edit, or delete tasks. Includes a floating action button (FAB) for adding new tasks and a navigation bar for Home, Calendar, and Dashboard.
+2. **Task Detail Screen:** Shows task details with options to edit or delete the task.
+3. **Add/Edit Task Screen:** A form to enter task details including title, description, due date, priority level, and location-based reminder.
+4. **Calendar Screen:** Uses FSCalendar to display tasks on a monthly calendar.
+5. **Dashboard Screen:** Displays task statistics using DGCharts for visual representations such as bar charts and pie charts.
 
-### Calendar Screen
-- Displays a calendar view for date selection.
-- List of tasks categorized as in progress, upcoming, and completed.
+## Implementation Details
 
-### Dashboard Screen
-- Displays a donut chart and bar graph for task statistics.
+### Programming Language
+- **Swift:** The primary programming language used for the app.
 
-## Requirements
-- **Language:** Swift
-- **Frameworks:** SwiftUI or UIKit
-- **Storage:** Core Data
-- **Third-Party Libraries:** Alamofire, SDWebImage, MapKit
-- **Architecture:** MVC or MVVM
-- **CI/CD:** GitHub Actions
-- **Testing:** Basic unit tests and UI tests
-- **Facial Recognition:** Face ID API
-- **Push Notifications:** For task reminders
+### Architecture
+- **MVC (Model-View-Controller):** Ensures a clear separation of concerns, making the app more modular and maintainable.
+
+### Storage
+- **Core Data:** Used for local storage, providing robust support for complex queries and relationships.
+
+### Libraries and Frameworks
+- **Lottie:** Used for animations to enhance the user experience.
+- **FSCalendar:** Provides a highly customizable calendar component.
+- **DGCharts:** Used for creating charts and graphs in the dashboard.
+- **MapKit:** Provides comprehensive location services for setting location-based reminders.
+
+### Continuous Integration and Delivery
+- **CI/CD with GitHub Actions:** Ensures continuous integration and delivery, allowing automated testing and deployment. 
+
+### Testing
+- **Unit Tests and UI Tests:** Basic unit tests and UI tests are implemented to ensure the app's functionality and reliability.
+
+### Security
+- **Face ID Integration:** Uses Apple's Face ID API for biometric authentication, enhancing security for unlocking the app or specific features.
 
 ## Bonus Features
-- **Cloud Sync:** Sync tasks with Firebase or iCloud.
-- **Animations and Custom UI Components:** Enhance user experience.
-- **Localization Support:** Include support for an additional language.
-- **Machine Learning:** Provide task suggestions or reminders based on user behavior.
+- **Animations and Custom UI Components:** Lottie animations are used to enhance the user experience.
 
 ## Installation
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/Tilak1028-st/Tasky.git
+1. Clone the repository from GitHub:
+   ```bash
+   git clone https://github.com/yourusername/smart-task-manager.git
    ```
-2. Navigate to the project directory:
-   ```sh
-   cd Tasky
+2. Open the project in Xcode:
+   ```bash
+   cd smart-task-manager
+   open SmartTaskManager.xcodeproj
    ```
 3. Install dependencies using CocoaPods:
-   ```sh
+   ```bash
    pod install
    ```
-4. Open the project in Xcode:
-   ```sh
-   open Tasky.xcworkspace
-   ```
-5. Build and run the app on a simulator or physical device.
-   
+4. Build and run the app on your simulator or device.
+
+## Usage
+1. **Home Screen:** View and manage tasks.
+2. **Add Task:** Tap the FAB to add a new task.
+3. **Edit Task:** Select a task to view details and edit.
+4. **Calendar:** Navigate to the Calendar screen to view tasks by date.
+5. **Dashboard:** Navigate to the Dashboard screen to see task statistics.
 
 ## Design Choices and Trade-offs
-- UIKit and MVC: Chosen for their stability and extensive documentation, making the app more maintainable and familiar to many iOS developers.
-- Core Data: Provides a powerful local storage solution that supports complex queries and relationships.
-- Third-Party Libraries: Selected for their reliability and ease of use, enhancing the app's functionality without significant overhead.
-- CI/CD with GitHub Actions: Ensures efficient development workflows, allowing for continuous integration and delivery.
+- **UIKit and MVC:** Chosen for their stability and extensive documentation, making the app more maintainable and familiar to many iOS developers.
+- **Core Data:** Provides a powerful local storage solution that supports complex queries and relationships.
+- **Third-Party Libraries:** Selected for their reliability and ease of use, enhancing the app's functionality without significant overhead.
+- **CI/CD with GitHub Actions:** Ensures efficient development workflows, allowing for continuous integration and delivery.
 
-## Future Improvements
-- **Advanced Machine Learning:** Implement more sophisticated algorithms for task suggestions.
-- **Cross-Platform Support:** Expand the app to support other platforms like Android.
-- **Enhanced Notifications:** Include more granular control over notifications and reminders.
+## Conclusion
+The Smart Task Manager app is designed to provide a robust and user-friendly task management solution. By leveraging modern iOS development practices and tools, the app ensures a smooth and efficient user experience. For further details and to view the source code, visit the [GitHub repository](https://github.com/yourusername/smart-task-manager).
 
-## Video Demonstration
-[A short video demonstrating the app's functionality](https://link-to-your-video.com)
-
-## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+## Demo Video
+Watch the [demo video](https://link-to-demo-video.com) to see the app in action.
 
 ---
 
-For any queries or issues, please contact [your.email@example.com](mailto:your.email@example.com).
+Feel free to customize this README file further based on specific details and preferences for your project.
