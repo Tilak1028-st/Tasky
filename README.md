@@ -83,16 +83,20 @@ Here are some screenshots of the Smart Task Manager app:
    ```bash
    git clone https://github.com/Tilak1028-st/Tasky.git
    ```
-2. Open the project in Xcode:
+2. Change directory to Tasky in terminal:
    ```bash
-   cd tasky
-   open tasky.xcodeproj
+   cd Tasky
    ```
-3. Install dependencies using CocoaPods:
+3. Run pod install to install dependencies using CocoaPods:
    ```bash
    pod install
    ```
-4. Build and run the app on your simulator or device.
+4. Open the project in Xcode:
+   ```bash
+   open Tasky.xcworkspace
+   ```
+5. Build and run the app on your simulator or device.
+
 
 ## Usage
 1. **Home Screen:** View and manage tasks.
