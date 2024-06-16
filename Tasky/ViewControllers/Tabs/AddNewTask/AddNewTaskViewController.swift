@@ -56,7 +56,7 @@ class AddNewTaskViewController: UIViewController {
         self.transitioningDelegate = self
         self.setupNavigationBar()
     }
-
+    
     
     // MARK: - Setup Methods
     private func setUpAddNewTaskView() {
@@ -272,16 +272,25 @@ class AddNewTaskViewController: UIViewController {
             
             CoreDataManager.shared.addTaskItem(title: taskTitle, description: taskDescription, dueDate: dueDate, priority: priority, isCompleted: isCompleted, locationReminder: locationReminder)
         }
+        
+        print("Due Date: \(dueDate)")
+        
+        NotificationManager.shared.scheduleNotificationAfterTwoMinutes(taskTitle: taskTitle, taskDescription: taskDescription)
         self.dismiss(animated: true)
     }
     
     
     @IBAction func didTapOnDeleteTask(_ sender: UIButton) {
         // Delete the task
+        
+        if let taskItem = taskItem {
+            NotificationManager.shared.cancelNotification(identifier: taskItem.title ?? "")
+            CoreDataManager.shared.deleteTaskItem(taskItem: taskItem)
+        }
         self.dismiss(animated: true)
     }
     
-   
+    
     private func showAlert(message: String) {
         let alertController = UIAlertController(title: "Tasky", message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))

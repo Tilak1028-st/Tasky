@@ -17,10 +17,11 @@
 		722F5E132C1DCF6900513608 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722F5E122C1DCF6900513608 /* PlaceholderTextView.swift */; };
 		72727DF62C1ED99200F7E910 /* noTask.json in Resources */ = {isa = PBXBuildFile; fileRef = 72727DF52C1ED99200F7E910 /* noTask.json */; };
 		72727DFA2C1F0CCE00F7E910 /* TaskData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 72727DF82C1F0CCD00F7E910 /* TaskData.xcdatamodeld */; };
-		72727E072C1F0E0D00F7E910 /* LocationEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72727E032C1F0E0D00F7E910 /* LocationEntity+CoreDataClass.swift */; };
-		72727E082C1F0E0D00F7E910 /* LocationEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72727E042C1F0E0D00F7E910 /* LocationEntity+CoreDataProperties.swift */; };
 		72727E092C1F0E0D00F7E910 /* TaskItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72727E052C1F0E0D00F7E910 /* TaskItem+CoreDataClass.swift */; };
 		72727E0A2C1F0E0D00F7E910 /* TaskItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72727E062C1F0E0D00F7E910 /* TaskItem+CoreDataProperties.swift */; };
+		72727E0C2C1F0F3300F7E910 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72727E0B2C1F0F3300F7E910 /* NotificationManager.swift */; };
+		72727E0F2C1F0F9700F7E910 /* LocationEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72727E0D2C1F0F9700F7E910 /* LocationEntity+CoreDataClass.swift */; };
+		72727E102C1F0F9700F7E910 /* LocationEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72727E0E2C1F0F9700F7E910 /* LocationEntity+CoreDataProperties.swift */; };
 		72786A5A2C1CA48A00E7D20C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72786A592C1CA48A00E7D20C /* AppDelegate.swift */; };
 		72786A5C2C1CA48A00E7D20C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72786A5B2C1CA48A00E7D20C /* SceneDelegate.swift */; };
 		72786A5E2C1CA48A00E7D20C /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72786A5D2C1CA48A00E7D20C /* OnboardingViewController.swift */; };
@@ -67,10 +68,11 @@
 		722F5E122C1DCF6900513608 /* PlaceholderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
 		72727DF52C1ED99200F7E910 /* noTask.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = noTask.json; sourceTree = "<group>"; };
 		72727DF92C1F0CCE00F7E910 /* TaskData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskData.xcdatamodel; sourceTree = "<group>"; };
-		72727E032C1F0E0D00F7E910 /* LocationEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LocationEntity+CoreDataClass.swift"; path = "Tasky/Models/LocationEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		72727E042C1F0E0D00F7E910 /* LocationEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LocationEntity+CoreDataProperties.swift"; path = "Tasky/Models/LocationEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		72727E052C1F0E0D00F7E910 /* TaskItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TaskItem+CoreDataClass.swift"; path = "Tasky/Models/TaskItem+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		72727E062C1F0E0D00F7E910 /* TaskItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TaskItem+CoreDataProperties.swift"; path = "Tasky/Models/TaskItem+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		72727E0B2C1F0F3300F7E910 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		72727E0D2C1F0F9700F7E910 /* LocationEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LocationEntity+CoreDataClass.swift"; path = "Tasky/Models/LocationEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		72727E0E2C1F0F9700F7E910 /* LocationEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LocationEntity+CoreDataProperties.swift"; path = "Tasky/Models/LocationEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		72786A562C1CA48A00E7D20C /* Tasky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tasky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72786A592C1CA48A00E7D20C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72786A5B2C1CA48A00E7D20C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,8 +133,8 @@
 		720C3CB92C1E96A500CCA348 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				72727E032C1F0E0D00F7E910 /* LocationEntity+CoreDataClass.swift */,
-				72727E042C1F0E0D00F7E910 /* LocationEntity+CoreDataProperties.swift */,
+				72727E0D2C1F0F9700F7E910 /* LocationEntity+CoreDataClass.swift */,
+				72727E0E2C1F0F9700F7E910 /* LocationEntity+CoreDataProperties.swift */,
 				72727E052C1F0E0D00F7E910 /* TaskItem+CoreDataClass.swift */,
 				72727E062C1F0E0D00F7E910 /* TaskItem+CoreDataProperties.swift */,
 			);
@@ -228,6 +230,7 @@
 				722F5E122C1DCF6900513608 /* PlaceholderTextView.swift */,
 				72DDDBAE2C1E227C005A3D61 /* UserDefaultsManager.swift */,
 				720C3CC22C1E987600CCA348 /* CoreDataManager.swift */,
+				72727E0B2C1F0F3300F7E910 /* NotificationManager.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -522,8 +525,6 @@
 				722F5E0F2C1DCAF800513608 /* UnderLineTextField.swift in Sources */,
 				72786A5A2C1CA48A00E7D20C /* AppDelegate.swift in Sources */,
 				72ED98322C1D671B009B4F23 /* DashboardViewController.swift in Sources */,
-				72727E072C1F0E0D00F7E910 /* LocationEntity+CoreDataClass.swift in Sources */,
-				72727E082C1F0E0D00F7E910 /* LocationEntity+CoreDataProperties.swift in Sources */,
 				72727E092C1F0E0D00F7E910 /* TaskItem+CoreDataClass.swift in Sources */,
 				72727E0A2C1F0E0D00F7E910 /* TaskItem+CoreDataProperties.swift in Sources */,
 				72727DFA2C1F0CCE00F7E910 /* TaskData.xcdatamodeld in Sources */,
@@ -531,7 +532,10 @@
 				72ED98342C1D67B5009B4F23 /* TaskViewController.swift in Sources */,
 				722F5E112C1DCC7D00513608 /* DismissAnimator.swift in Sources */,
 				72786A5C2C1CA48A00E7D20C /* SceneDelegate.swift in Sources */,
+				72727E0C2C1F0F3300F7E910 /* NotificationManager.swift in Sources */,
 				72DDDBAB2C1DFE90005A3D61 /* MapSearchViewController.swift in Sources */,
+				72727E0F2C1F0F9700F7E910 /* LocationEntity+CoreDataClass.swift in Sources */,
+				72727E102C1F0F9700F7E910 /* LocationEntity+CoreDataProperties.swift in Sources */,
 				722F5E132C1DCF6900513608 /* PlaceholderTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -708,6 +712,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Tasky/Info.plist;
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "We use Face ID to authenticate you and provide secure access to your tasks.";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "We use push notifications to keep you informed about important tasks.";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need your location to show your current position on the map and to provide location-based services.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to show your current position on the map and to provide location-based services.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -721,7 +726,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com..Tasky;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appfinity.TonallyReal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Tonally real development profile";
@@ -746,6 +751,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Tasky/Info.plist;
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "We use Face ID to authenticate you and provide secure access to your tasks.";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "We use push notifications to keep you informed about important tasks.";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need your location to show your current position on the map and to provide location-based services.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to show your current position on the map and to provide location-based services.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -759,7 +765,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com..Tasky;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appfinity.TonallyReal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Tonally real development profile";
