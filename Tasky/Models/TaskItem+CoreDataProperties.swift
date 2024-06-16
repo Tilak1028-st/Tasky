@@ -18,10 +18,10 @@ extension TaskItem {
 
     @NSManaged public var dueDate: Date?
     @NSManaged public var isCompleted: Bool
+    @NSManaged public var isInProgess: Bool
     @NSManaged public var priority: String?
     @NSManaged public var taskDescription: String?
     @NSManaged public var title: String?
-    @NSManaged public var isInProgess: Bool
     @NSManaged public var locationReminder: LocationEntity?
 
 }
