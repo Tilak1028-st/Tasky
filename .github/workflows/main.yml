@@ -28,7 +28,7 @@ jobs:
 
       - name: Verify Core Data Model
         run: |
-          MODEL_PATH="Tasky/Tasky/Tasky.xcdatamodeld"
+          MODEL_PATH="/Users/tilakshakya/Documents/Project/Tasky/Tasky/Tasky.xcdatamodeld"
           CURRENT_VERSION_FILE="$MODEL_PATH/.xccurrentversion"
           if [ ! -d "$MODEL_PATH" ]; then
             echo "Error: Core Data model not found at $MODEL_PATH!"
