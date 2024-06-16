@@ -474,7 +474,7 @@
 		502F9AA4D48A69ACBF4F81215D6C0603 /* FSCalendarCollectionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarCollectionView.m; path = FSCalendar/FSCalendarCollectionView.m; sourceTree = "<group>"; };
 		5065ECB43B6A0140B24AF8A93321E629 /* EpoxySwiftUIHostingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EpoxySwiftUIHostingView.swift; path = Sources/Private/EmbeddedLibraries/EpoxyCore/SwiftUI/EpoxySwiftUIHostingView.swift; sourceTree = "<group>"; };
 		50B4FC38443520A93A4842677A32D06C /* LottieAnimationLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LottieAnimationLayer.swift; path = Sources/Public/Animation/LottieAnimationLayer.swift; sourceTree = "<group>"; };
-		51BA97E8B5085EFFB47BC9C0B785CEA7 /* Lottie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51BA97E8B5085EFFB47BC9C0B785CEA7 /* lottie-ios */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "lottie-ios"; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52601BE6A5D222B11ABC4E5F01CAB5CE /* Asset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Asset.swift; path = Sources/Private/Model/Assets/Asset.swift; sourceTree = "<group>"; };
 		52D01CE13C01EC0B71F76CB390B665F6 /* LottieAnimationViewInitializers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LottieAnimationViewInitializers.swift; path = Sources/Public/Animation/LottieAnimationViewInitializers.swift; sourceTree = "<group>"; };
 		5379F2A03BDD7F98E26750A1B6B34AF1 /* KeyframeGroup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyframeGroup.swift; path = Sources/Private/Model/Keyframes/KeyframeGroup.swift; sourceTree = "<group>"; };
@@ -564,7 +564,7 @@
 		912B2DB720FCE7F7A23F694CD90858C7 /* RectangleAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RectangleAnimation.swift; path = Sources/Private/CoreAnimation/Animations/RectangleAnimation.swift; sourceTree = "<group>"; };
 		932269C028F042A346351357BEC556B8 /* PathNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PathNode.swift; path = Sources/Private/MainThread/NodeRenderSystem/Protocols/PathNode.swift; sourceTree = "<group>"; };
 		942A6440965A708C5E6021F9D6A69475 /* AnimatedSwitch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedSwitch.swift; path = Sources/Public/Controls/AnimatedSwitch.swift; sourceTree = "<group>"; };
-		95209B8BB966524BC76543F99C75F5FE /* FSCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FSCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95209B8BB966524BC76543F99C75F5FE /* FSCalendar */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FSCalendar; path = FSCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9530F3A05A7944F29CEAB8C0FA5EB2D1 /* Entry+Serialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Entry+Serialization.swift"; path = "Sources/Private/EmbeddedLibraries/ZipFoundation/Entry+Serialization.swift"; sourceTree = "<group>"; };
 		970BE1FB7D79D5BAAB6903586ADACC00 /* MaskContainerLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MaskContainerLayer.swift; path = Sources/Private/MainThread/LayerContainers/CompLayers/MaskContainerLayer.swift; sourceTree = "<group>"; };
 		9719BC4660C92455CED20526542A0768 /* FillRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FillRenderer.swift; path = Sources/Private/MainThread/NodeRenderSystem/Nodes/OutputNodes/Renderables/FillRenderer.swift; sourceTree = "<group>"; };
@@ -577,7 +577,7 @@
 		9A2437F039B3358DB51612FB61150C4C /* FSCalendar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FSCalendar-Info.plist"; sourceTree = "<group>"; };
 		9B39E21D0E60FB3EA98CB25BCBA28279 /* EpoxyModelProperty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EpoxyModelProperty.swift; path = Sources/Private/EmbeddedLibraries/EpoxyCore/Model/EpoxyModelProperty.swift; sourceTree = "<group>"; };
 		9D3AEBF7992EBAEA868D037D8B0904E8 /* AnimationLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationLayer.swift; path = Sources/Private/CoreAnimation/Layers/AnimationLayer.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E2790EF93F394B578BE6854DF98AEE7 /* GradientFillNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GradientFillNode.swift; path = Sources/Private/MainThread/NodeRenderSystem/Nodes/RenderNodes/GradientFillNode.swift; sourceTree = "<group>"; };
 		A05874AF2AC48A90C05181A5D98F7FEA /* NodePropertyMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NodePropertyMap.swift; path = Sources/Private/MainThread/NodeRenderSystem/NodeProperties/Protocols/NodePropertyMap.swift; sourceTree = "<group>"; };
 		A0CDD014A1B6A60331A471D7377E2367 /* FSCalendarDelegationProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarDelegationProxy.h; path = FSCalendar/FSCalendarDelegationProxy.h; sourceTree = "<group>"; };
@@ -768,8 +768,8 @@
 		2AC1AC4F5243ECD1303053C5CCFCB585 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				95209B8BB966524BC76543F99C75F5FE /* FSCalendar.framework */,
-				51BA97E8B5085EFFB47BC9C0B785CEA7 /* Lottie.framework */,
+				95209B8BB966524BC76543F99C75F5FE /* FSCalendar */,
+				51BA97E8B5085EFFB47BC9C0B785CEA7 /* lottie-ios */,
 				65F1A043C306DAA9E3A5783873F8F68C /* Pods-Tasky */,
 				86F9D1D49B5D265AE793375CCA89AA62 /* Pods-TaskyTests */,
 			);
@@ -837,6 +837,7 @@
 				A2DC09087AD9C247DDCB0A9A19CCB7B7 /* FSCalendarWeekdayView.m */,
 				21AAD63C89873E8D5B18F450B9EB2075 /* Support Files */,
 			);
+			name = FSCalendar;
 			path = FSCalendar;
 			sourceTree = "<group>";
 		};
@@ -1165,6 +1166,7 @@
 				3CBFC3F193C3632694F6421D3B37CF5B /* WillDisplayProviding.swift */,
 				9C4CD74FA0A36D3A63B77FFA7195355F /* Support Files */,
 			);
+			name = "lottie-ios";
 			path = "lottie-ios";
 			sourceTree = "<group>";
 		};
@@ -1265,7 +1267,7 @@
 			);
 			name = "lottie-ios";
 			productName = Lottie;
-			productReference = 51BA97E8B5085EFFB47BC9C0B785CEA7 /* Lottie.framework */;
+			productReference = 51BA97E8B5085EFFB47BC9C0B785CEA7 /* lottie-ios */;
 			productType = "com.apple.product-type.framework";
 		};
 		13285D54682BEAD805960F9E6EEB9949 /* FSCalendar */ = {
@@ -1283,7 +1285,7 @@
 			);
 			name = FSCalendar;
 			productName = FSCalendar;
-			productReference = 95209B8BB966524BC76543F99C75F5FE /* FSCalendar.framework */;
+			productReference = 95209B8BB966524BC76543F99C75F5FE /* FSCalendar */;
 			productType = "com.apple.product-type.framework";
 		};
 		30AC7D6D850E970E8267E59553658C52 /* Pods-Tasky */ = {
