@@ -65,10 +65,10 @@ The app follows a clean and intuitive UI design as per the provided mockups.
    
 
 ## Design Choices and Trade-offs
-UIKit and MVC: Chosen for their stability and extensive documentation, making the app more maintainable and familiar to many iOS developers.
-Core Data: Provides a powerful local storage solution that supports complex queries and relationships.
-Third-Party Libraries: Selected for their reliability and ease of use, enhancing the app's functionality without significant overhead.
-CI/CD with GitHub Actions: Ensures efficient development workflows, allowing for continuous integration and delivery.
+- UIKit and MVC: Chosen for their stability and extensive documentation, making the app more maintainable and familiar to many iOS developers.
+- Core Data: Provides a powerful local storage solution that supports complex queries and relationships.
+- Third-Party Libraries: Selected for their reliability and ease of use, enhancing the app's functionality without significant overhead.
+- CI/CD with GitHub Actions: Ensures efficient development workflows, allowing for continuous integration and delivery.
 
 ## Future Improvements
 - **Advanced Machine Learning:** Implement more sophisticated algorithms for task suggestions.
