@@ -82,7 +82,7 @@ The app's user interface follows a clean and modern design using UIKit, ensuring
 The Smart Task Manager app is designed to provide a robust and user-friendly task management solution. By leveraging modern iOS development practices and tools, the app ensures a smooth and efficient user experience. For further details and to view the source code, visit the [GitHub repository](https://github.com/yourusername/smart-task-manager).
 
 ## Demo Video
-Watch the [demo video](https://link-to-demo-video.com) to see the app in action.
+Watch the [demo video](https://drive.google.com/file/d/1AuyUgUYXG71--WRxM2diidDDgIpv1-tW/view?usp=sharing) to see the app in action.
 
 ---
 
