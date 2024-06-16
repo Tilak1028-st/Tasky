@@ -1,72 +1,90 @@
 # Smart Task Manager iOS App
 
-The Smart Task Manager is a comprehensive iOS application that allows users to create, read, update, and delete tasks with various features such as location-based reminders, task statistics dashboard, and facial recognition for app security.
-
-## Table of Contents
-- [Features](#features)
-- [Screenshots](#screenshots)
-- [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
-- [Design Choices and Trade-offs](#design-choices-and-trade-offs)
-- [Future Improvements](#future-improvements)
-- [Contact](#contact)
+## Overview
+The **Smart Task Manager** is a comprehensive iOS application designed to help users manage their tasks efficiently. This app allows users to create, read, update, and delete tasks with various attributes like title, description, due date, priority level, and location-based reminders. It also includes a dashboard for visualizing task statistics and progress.
 
 ## Features
-- Create, read, update, and delete tasks
-- Set task title, description, due date, priority level, and location-based reminders
-- Dashboard to visualize task statistics and progress
-- Facial recognition using Apple's Face ID API for app unlocking
-- Push notifications for task reminders
-- UI design based on provided mockups
+- **CRUD Operations:** Users can create, read, update, and delete tasks.
+- **Task Attributes:** Each task includes a title, description, due date, priority level (High, Medium, Low), and location-based reminders.
+- **Dashboard:** Visual representation of task statistics including completed tasks, pending tasks, and task priority distribution.
+- **Facial Recognition:** Utilizes Apple's Face ID for unlocking the app or specific features.
+- **Push Notifications:** Reminders for upcoming tasks.
+- **Local Storage:** Uses Core Data for storing tasks locally.
+- **Third-Party Libraries:** Integrates libraries such as Alamofire for network requests, SDWebImage for image handling, and MapKit for location features.
 
-## Screenshots
-<table>
-  <tr>
-    <td><img src="image1.png" alt="Welcome Screen"></td>
-    <td><img src="image2.png" alt="Create Task Screen"></td>
-    <td><img src="image3.png" alt="Task Manager Screen"></td>
-  </tr>
-  <tr>
-    <td><img src="image4.png" alt="Dashboard Screen"></td>
-    <td><img src="image5.png" alt="Calendar Screen"></td>
-    <td></td>
-  </tr>
-</table>
+## UI Design
+The app follows a clean and intuitive UI design as per the provided mockups.
 
-## Technologies Used
-- Swift programming language
-- SwiftUI or UIKit for user interface
-- Core Data for local data storage
-- Third-party libraries:
-  - Alamofire for network requests
-  - SDWebImage for image handling
-  - MapKit for location-based features
-- MVC or MVVM architectural pattern
-- CI/CD using GitHub Actions or other CI/CD tool
-- Unit tests and UI tests
-- Apple's Face ID API for facial recognition
+### Home Screen
+- Displays a list of tasks categorized into "In Progress", "Upcoming", and "Completed".
+- Floating Action Button (FAB) for adding new tasks.
+- Bottom navigation bar with icons for Task Manager, Calendar, and Dashboard.
 
-## Getting Started
-1. Clone the repository
-2. Open the project in Xcode
-3. Build and run the app on a simulator or connected device
+### Calendar Screen
+- Displays a calendar view for date selection.
+- List of tasks categorized as in progress, upcoming, and completed.
 
-## Design Choices and Trade-offs
-- Used SwiftUI for building the user interface to leverage its declarative syntax and simplify UI development
-- Implemented Core Data for local data persistence to allow offline access and fast data retrieval
-- Integrated third-party libraries to speed up development and add robust functionality
-- Followed MVVM architectural pattern to ensure separation of concerns and maintainability
-- Set up CI/CD pipeline using GitHub Actions for automated builds and tests to catch issues early
-- Implemented basic facial recognition using Face ID API for an additional layer of app security
-- Focused on delivering core features and meeting requirements within the given timeframe, while leaving room for future enhancements
+### Dashboard Screen
+- Displays a donut chart and bar graph for task statistics.
+
+## Requirements
+- **Language:** Swift
+- **Frameworks:** SwiftUI or UIKit
+- **Storage:** Core Data
+- **Third-Party Libraries:** Alamofire, SDWebImage, MapKit
+- **Architecture:** MVC or MVVM
+- **CI/CD:** GitHub Actions
+- **Testing:** Basic unit tests and UI tests
+- **Facial Recognition:** Face ID API
+- **Push Notifications:** For task reminders
+
+## Bonus Features
+- **Cloud Sync:** Sync tasks with Firebase or iCloud.
+- **Animations and Custom UI Components:** Enhance user experience.
+- **Localization Support:** Include support for an additional language.
+- **Machine Learning:** Provide task suggestions or reminders based on user behavior.
+
+## Installation
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/yourusername/smart-task-manager.git
+   ```
+2. Navigate to the project directory:
+   ```sh
+   cd smart-task-manager
+   ```
+3. Install dependencies using CocoaPods:
+   ```sh
+   pod install
+   ```
+4. Open the project in Xcode:
+   ```sh
+   open SmartTaskManager.xcworkspace
+   ```
+5. Build and run the app on a simulator or physical device.
+
+## Design Choices
+- **SwiftUI for UI Design:** SwiftUI was chosen for its declarative syntax and efficient UI updates.
+- **Core Data for Storage:** Core Data provides robust local storage with support for complex queries and relationships.
+- **Face ID Integration:** Enhances security by allowing biometric authentication.
+- **Third-Party Libraries:** Alamofire simplifies network requests, SDWebImage efficiently handles image caching, and MapKit provides comprehensive location services.
+- **CI/CD with GitHub Actions:** Ensures continuous integration and delivery, allowing automated testing and deployment.
+
+## Trade-offs
+- **SwiftUI vs. UIKit:** SwiftUI offers modern declarative syntax but lacks some advanced features present in UIKit.
+- **Core Data vs. Realm:** Core Data is integrated with the Apple ecosystem, but Realm offers simpler syntax and better performance for some use cases.
 
 ## Future Improvements
-- Implement cloud sync feature using Firebase or iCloud for seamless cross-device task management
-- Add more animations and custom UI components to enhance the user experience
-- Provide localization support for multiple languages to cater to a wider audience
-- Explore machine learning capabilities to offer intelligent task suggestions and reminders based on user behavior
+- **Advanced Machine Learning:** Implement more sophisticated algorithms for task suggestions.
+- **Cross-Platform Support:** Expand the app to support other platforms like Android.
+- **Enhanced Notifications:** Include more granular control over notifications and reminders.
 
-## Contact
-For any questions or feedback, please contact the developer at [developer@email.com](mailto:developer@email.com).
+## Video Demonstration
+[A short video demonstrating the app's functionality](https://link-to-your-video.com)
 
-This README uses GitHub markdown syntax, including the use of `<table>` and `<img>` tags for displaying the screenshots in a grid format. You can copy and paste this markdown directly into your GitHub repository's README file, and it will render correctly on the repository page.
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+For any queries or issues, please contact [your.email@example.com](mailto:your.email@example.com).
