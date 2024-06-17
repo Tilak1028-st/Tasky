@@ -118,6 +118,7 @@ class DashboardViewController: UIViewController {
     
     func setupStackedBarChart() {
         stackedBarChartView = BarChartView()
+        stackedBarChartView.dragYEnabled = false
         stackedBarChartView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(stackedBarChartView)
         
@@ -136,6 +137,7 @@ class DashboardViewController: UIViewController {
     
     func setupLineChart() {
         lineChartView = LineChartView()
+        lineChartView.dragYEnabled = false
         lineChartView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(lineChartView)
         

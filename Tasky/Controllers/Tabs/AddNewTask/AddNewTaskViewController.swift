@@ -76,6 +76,7 @@ class AddNewTaskViewController: UIViewController {
         timeTextField.placeholder = AppStringConstant.selectTime
         timePicker = UIDatePicker()
         timePicker.datePickerMode = .time
+        timePicker.preferredDatePickerStyle = .wheels
         timePicker.addTarget(self, action: #selector(timeChanged), for: .valueChanged)
         timeTextField.inputView = timePicker
         
