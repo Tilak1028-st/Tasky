@@ -47,6 +47,17 @@ Here are some screenshots of the Smart Task Manager app:
       <img src="https://github.com/Tilak1028-st/Tasky/assets/75114840/cb9b31e3-6e9f-4580-914f-d0a8ff0be026" width="225" height="375" alt="Dashboard Screen">
     </td>
   </tr>
+  </tr>
+  <tr>
+    <td>
+      <p><strong>3 - Apple Calendar</strong></p>
+      <img src="https://github.com/Tilak1028-st/Tasky/assets/75114840/f7806d83-db6e-4264-a5e5-8299fa0e2519" width="225" height="375" alt="Calendar Screen">
+    </td>
+    <td>
+      <p><strong>4 - Dashboard Screen</strong></p>
+      <img src="https://github.com/Tilak1028-st/Tasky/assets/75114840/3dd0bc86-01a9-46e2-b6c7-065f99c36f33" width="225" height="375" alt="Dashboard Screen">
+    </td>
+  </tr>
 </table>
 
 ## Implementation Details
