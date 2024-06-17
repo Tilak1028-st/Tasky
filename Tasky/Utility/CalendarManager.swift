@@ -64,18 +64,22 @@ class CalendarManager {
                 let event = EKEvent(eventStore: self.eventStore)
                 event.title = title
                 event.startDate = dueDate
-                event.endDate = dueDate.addingTimeInterval(3600) // Event duration is one hour
+                event.endDate = dueDate.addingTimeInterval(3600)
                 event.notes = notes
                 event.calendar = self.eventStore.defaultCalendarForNewEvents
                 
                 if let location = location {
                     let structuredLocation = EKStructuredLocation(title: "Location")
                     structuredLocation.geoLocation = location
-                    let alarm = EKAlarm()
-                    alarm.structuredLocation = structuredLocation
-                    alarm.proximity = .enter
-                    event.addAlarm(alarm)
+                    let alarmLocation = EKAlarm()
+                    alarmLocation.structuredLocation = structuredLocation
+                    alarmLocation.proximity = .enter
+                    event.addAlarm(alarmLocation)
                 }
+                
+                // Add a notification alarm 10 minutes before the event
+                let alarmNotification = EKAlarm(relativeOffset: -60)
+                event.addAlarm(alarmNotification)
                 
                 do {
                     try self.eventStore.save(event, span: .thisEvent)
@@ -119,13 +123,19 @@ class CalendarManager {
                         if let newLocation = newLocation {
                             let structuredLocation = EKStructuredLocation(title: "Location")
                             structuredLocation.geoLocation = newLocation
-                            let alarm = EKAlarm()
-                            alarm.structuredLocation = structuredLocation
-                            alarm.proximity = .enter
-                            event.alarms = [alarm]
+                            let alarmLocation = EKAlarm()
+                            alarmLocation.structuredLocation = structuredLocation
+                            alarmLocation.proximity = .enter
+                            event.addAlarm(alarmLocation)
                         } else {
-                            event.alarms = nil
+                            // Remove any existing location-based alarms
+                            event.alarms?.removeAll(where: { $0.structuredLocation != nil })
                         }
+                        
+                        // Update notification alarm to 10 minutes before the event
+                        let alarmNotification = EKAlarm(relativeOffset: -600) 
+                        event.alarms?.removeAll(where: { $0.relativeOffset == -600 })
+                        event.addAlarm(alarmNotification)
                         
                         do {
                             try self.eventStore.save(event, span: .thisEvent)
