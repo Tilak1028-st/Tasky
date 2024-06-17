@@ -51,7 +51,7 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
            content.body = taskDescription
            content.sound = .default
 
-           let triggerDate = Calendar.current.date(byAdding: .minute, value: 1, to: Date())
+           let triggerDate = Calendar.current.date(byAdding: .minute, value: 2, to: Date())
            guard let triggerDateComponents = triggerDate else { return }
            
            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: triggerDateComponents.timeIntervalSinceNow, repeats: false)
@@ -68,6 +68,28 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
 
     func cancelNotification(identifier: String) {
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [identifier])
+    }
+
+    func editNotification(identifier: String, newTaskTitle: String, newTaskDescription: String, newDueDate: Date) {
+        // Cancel the existing notification
+        cancelNotification(identifier: identifier)
+        
+        // Schedule a new notification with the updated details
+        let content = UNMutableNotificationContent()
+        content.title = newTaskTitle
+        content.body = newTaskDescription
+        content.sound = .default
+
+        let triggerDate = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: newDueDate)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
+
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+
+        UNUserNotificationCenter.current().add(request) { (error) in
+            if let error = error {
+                print("Error editing notification: \(error.localizedDescription)")
+            }
+        }
     }
 
     // UNUserNotificationCenterDelegate methods

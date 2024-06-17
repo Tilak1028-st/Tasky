@@ -10,13 +10,13 @@ import FSCalendar
 
 class CalendarViewController: UIViewController {
 
-    // MARK: - Outlets
+    // MARK: Outlets
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var taskTableView: UITableView!
     @IBOutlet weak var noTaskLabel: UILabel!
     @IBOutlet weak var noDataView: UIView!
     
-    // MARK: - Properties
+    // MARK: Properties
     var taskItems: [TaskItem] = []
     var tasksForSelectedDate: [TaskItem] = []
     var completedTasksForSelectedDate: [TaskItem] = []

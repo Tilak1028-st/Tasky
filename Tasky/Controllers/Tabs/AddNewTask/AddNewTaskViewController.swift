@@ -10,6 +10,7 @@ import FSCalendar
 import MapKit
 import CoreLocation
 import IQKeyboardManagerSwift
+import EventKit
 
 
 struct Location {
@@ -44,6 +45,7 @@ class AddNewTaskViewController: UIViewController {
     var userCurrentLocation: Location?
     var isEditingTask = false
     var taskItem: TaskItem?
+    var originalTask: TaskItem?
     var timePicker: UIDatePicker!
     var selectedDateAndTime: Date?
     
@@ -77,6 +79,7 @@ class AddNewTaskViewController: UIViewController {
         timePicker = UIDatePicker()
         timePicker.datePickerMode = .time
         timePicker.preferredDatePickerStyle = .wheels
+        timePicker.locale = Locale(identifier: "en_US")
         timePicker.addTarget(self, action: #selector(timeChanged), for: .valueChanged)
         timeTextField.inputView = timePicker
         
@@ -164,14 +167,15 @@ class AddNewTaskViewController: UIViewController {
         
         // Format the date and time and set it as the text of the UITextField
         let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US")
         formatter.timeStyle = .short
         timeTextField.text = formatter.string(from: timePicker.date)
     }
-
-       @objc func doneButtonTapped() {
-           // Dismiss the picker when the Done button is tapped
-           timeTextField.resignFirstResponder()
-       }
+    
+    @objc func doneButtonTapped() {
+        // Dismiss the picker when the Done button is tapped
+        timeTextField.resignFirstResponder()
+    }
     
     private func setupLocationManager() {
         locationManager.delegate = self
@@ -182,6 +186,8 @@ class AddNewTaskViewController: UIViewController {
     private func populateTaskDataIfNeeded() {
         guard let taskItem = taskItem else { return }
         
+        originalTask = taskItem
+        
         taskTitleTextField.text = taskItem.title
         taskDescriptionTextView.text = taskItem.taskDescription
         calendar.select(taskItem.dueDate)
@@ -190,11 +196,11 @@ class AddNewTaskViewController: UIViewController {
         timeChanged()
         
         switch taskItem.priority {
-        case "Low":
+        case AppStringConstant.low:
             selectPriorityStackView(lowPriorityStackView)
-        case "Medium":
+        case AppStringConstant.medium:
             selectPriorityStackView(evenPriorityStackView)
-        case "High":
+        case AppStringConstant.high:
             selectPriorityStackView(highPriorityStackView)
         default:
             selectPriorityStackView(lowPriorityStackView)
@@ -268,20 +274,20 @@ class AddNewTaskViewController: UIViewController {
     @IBAction func didTapOnCreateTask(_ sender: UIButton) {
         // Validate task title
         guard let taskTitle = taskTitleTextField.text, !taskTitle.isEmpty else {
-            showAlert(message: "Please enter a task title.")
+            showAlert(message: AppStringConstant.pleaseEnterTaskTitle)
             return
         }
         
         let taskDescription = taskDescriptionTextView.text ?? ""
         
         guard let dueDate = calendar.selectedDate else {
-            showAlert(message: "Please select a due date.")
+            showAlert(message: AppStringConstant.pleaseSelectDueDate)
             return
         }
         
         // Merge the selected date and time
         guard let selectedDateAndTime = selectedDateAndTime else {
-            showAlert(message: "Please select a date and time.")
+            showAlert(message: AppStringConstant.pleaseSelectDueTime)
             return
         }
         
@@ -300,17 +306,16 @@ class AddNewTaskViewController: UIViewController {
             return
         }
         
-        
         // Determine priority
         let priority: String
         if lowPriorityStackView.layer.borderWidth > 0 {
-            priority = "Low"
+            priority = AppStringConstant.low
         } else if evenPriorityStackView.layer.borderWidth > 0 {
-            priority = "Medium"
+            priority = AppStringConstant.medium
         } else if highPriorityStackView.layer.borderWidth > 0 {
-            priority = "High"
+            priority = AppStringConstant.high
         } else {
-            priority = "Low"
+            priority = AppStringConstant.low
         }
         
         // Task completion status
@@ -326,21 +331,56 @@ class AddNewTaskViewController: UIViewController {
             locationReminder?.longitude = userLocation.coordinate.longitude
         }
         
-        // Update or add the task item using CoreDataManager
         if isEditingTask {
             guard let taskItem = taskItem else { return }
+            guard let originalTask = originalTask else { return }
             let locationReminder = locationReminder
+            
+            
+            // Edit the existing reminder in the calendar
+            if let eventIdentifier = taskItem.title {
+                CalendarManager.shared.editEvent(originalTitle: originalTask.title ?? "", originalStartDate: originalTask.dueDate ?? Date(), originalNotes: originalTask.taskDescription, newTitle: taskTitle, newStartDate: mergedDate, newNotes: taskDescription, newLocation: CLLocation(latitude: locationReminder?.latitude ?? 0.0, longitude: locationReminder?.longitude ?? 0.0)) { success, error in
+                    if success {
+                        print(AppStringConstant.reminderUpdated)
+                    } else {
+                        print("Failed to update reminder: \(String(describing: error))")
+                    }
+                }
+            }
+            
+            
+            // Edit the existing notification
+            NotificationManager.shared.editNotification(identifier: originalTask.title ?? "", newTaskTitle: taskTitle, newTaskDescription: taskItem.taskDescription ?? "", newDueDate: mergedDate)
+            
             
             CoreDataManager.shared.updateTaskItem(taskItem: taskItem, title: taskTitle, description: taskDescription, dueDate: mergedDate, priority: priority, isCompleted: taskItem.isCompleted, isInProgress: taskItem.isInProgess, locationReminder: locationReminder)
             
-            print(CoreDataManager.shared.fetchTaskItems())
         } else {
+            // Add a new task item and get its eventIdentifier
             CoreDataManager.shared.addTaskItem(title: taskTitle, description: taskDescription, dueDate: mergedDate, priority: priority, isCompleted: isCompleted, locationReminder: locationReminder)
+            
+            // Add a new notification
+            NotificationManager.shared.scheduleNotification(taskTitle: taskTitle, taskDescription: taskDescription, dueDate: mergedDate)
+            
+            // Add a new event to the calendar
+            CalendarManager.shared.addEvent(title: taskTitle, dueDate: mergedDate, notes: taskDescription, location: CLLocation(latitude: locationReminder?.latitude ?? 0.0, longitude: locationReminder?.longitude ?? 0.0)) { success, text, error  in
+                if success {
+                    print(AppStringConstant.reminderAdded)
+                } else {
+                    print("Failed to add reminder: \(String(describing: error))")
+                }
+            }
+            
+            // Add a new location based reminder to the calendar
+            CalendarManager.shared.addLocationReminder(title: taskTitle, notes: taskDescription, dueDate: mergedDate, priority: priority, location: CLLocation(latitude: locationReminder?.latitude ?? 0.0, longitude: locationReminder?.longitude ?? 0.0), radius: 100, proximity: .enter) { success, text, error  in
+                if success {
+                    print(AppStringConstant.reminderAdded)
+                } else {
+                    print("Failed to add reminder: \(String(describing: error))")
+                }
+            }
         }
         
-        print("Due Date: \(mergedDate)")
-        
-        NotificationManager.shared.scheduleNotification(taskTitle: taskTitle, taskDescription: taskDescription, dueDate: mergedDate)
         self.dismiss(animated: true)
     }
     
@@ -350,6 +390,15 @@ class AddNewTaskViewController: UIViewController {
         
         if let taskItem = taskItem {
             NotificationManager.shared.cancelNotification(identifier: taskItem.title ?? "")
+            
+            CalendarManager.shared.deleteEvent(title: taskItem.title ?? "", startDate: taskItem.dueDate ?? Date(), notes: taskItem.taskDescription) {success, error in
+                if success {
+                    print(AppStringConstant.reminderDeleted)
+                } else {
+                    print("Failed to add reminder: \(String(describing: error))")
+                }
+            }
+            
             CoreDataManager.shared.deleteTaskItem(taskItem: taskItem)
         }
         self.dismiss(animated: true)
@@ -357,8 +406,8 @@ class AddNewTaskViewController: UIViewController {
     
     
     private func showAlert(message: String) {
-        let alertController = UIAlertController(title: "Tasky", message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        let alertController = UIAlertController(title: AppStringConstant.tasky, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: AppStringConstant.ok, style: .default, handler: nil))
         present(alertController, animated: true, completion: nil)
     }
     

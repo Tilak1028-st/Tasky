@@ -176,7 +176,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="385" height="1200"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Task Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TEe-Nk-r4z" customClass="UnderlineTextField" customModule="Tasky" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="35" width="345" height="34"/>
+                                                <rect key="frame" x="20" y="35" width="345" height="47"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="organization-title"/>
                                                 <userDefinedRuntimeAttributes>
@@ -192,13 +192,13 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYx-Xq-4uZ">
-                                                <rect key="frame" x="20" y="104" width="121" height="22"/>
+                                                <rect key="frame" x="20" y="117" width="121" height="22"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qEU-rP-fDN" customClass="PlaceholderTextView" customModule="Tasky" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="136" width="345" height="198"/>
+                                                <rect key="frame" x="20" y="149" width="345" height="198"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
@@ -208,13 +208,13 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Priority Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3V-rN-7Oy">
-                                                <rect key="frame" x="20" y="369" width="143" height="22"/>
+                                                <rect key="frame" x="20" y="382" width="143" height="22"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="I3P-5l-8tn" userLabel="Priority StackView">
-                                                <rect key="frame" x="20" y="401" width="345" height="50"/>
+                                                <rect key="frame" x="20" y="414" width="345" height="50"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="pvx-zJ-7Cm" userLabel="Low Priority StackView">
                                                         <rect key="frame" x="0.0" y="0.0" width="108.33333333333333" height="50"/>
@@ -321,19 +321,19 @@
                                                 </constraints>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Task Remainder Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrh-m8-H4K">
-                                                <rect key="frame" x="20" y="486" width="283.66666666666669" height="22"/>
+                                                <rect key="frame" x="20" y="499" width="283.66666666666669" height="22"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Due Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydz-ek-3Mh">
-                                                <rect key="frame" x="20.000000000000007" y="590" width="118.66666666666669" height="22"/>
+                                                <rect key="frame" x="20.000000000000007" y="603" width="118.66666666666669" height="22"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OiY-mD-vhb" customClass="FSCalendar">
-                                                <rect key="frame" x="20" y="622" width="345" height="270"/>
+                                                <rect key="frame" x="20" y="635" width="345" height="270"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="allowsMultipleSelection" value="NO"/>
@@ -352,20 +352,20 @@
                                                 </connections>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6X-ug-BIH">
-                                                <rect key="frame" x="19.999999999999993" y="927" width="111.33333333333331" height="22"/>
+                                                <rect key="frame" x="19.999999999999993" y="940" width="111.33333333333331" height="22"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7RT-lC-fIR">
-                                                <rect key="frame" x="20" y="959" width="345" height="132"/>
+                                                <rect key="frame" x="20" y="972" width="345" height="132"/>
                                                 <standardMapConfiguration key="preferredConfiguration"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="acb-sM-ddK" id="WAE-zn-XB1"/>
                                                 </connections>
                                             </mapView>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Task Remainder Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0LX-Ja-bpE">
-                                                <rect key="frame" x="20" y="518" width="283.66666666666669" height="37"/>
+                                                <rect key="frame" x="20" y="531" width="283.66666666666669" height="37"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -500,7 +500,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uDc-Ip-YKC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1619" y="2226"/>
+            <point key="canvasLocation" x="1615" y="2406"/>
         </scene>
         <!--Dashboard View Controller-->
         <scene sceneID="V2N-GF-hve">
@@ -568,7 +568,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Sv-1f-B3F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2503" y="2150"/>
+            <point key="canvasLocation" x="2430" y="2319"/>
         </scene>
         <!--Home-->
         <scene sceneID="wys-SU-CHg">
@@ -842,10 +842,8 @@
     </scenes>
     <designables>
         <designable name="TEe-Nk-r4z">
-            <size key="intrinsicContentSize" width="131" height="34"/>
+            <size key="intrinsicContentSize" width="124.66666666666667" height="47"/>
         </designable>
-        <designable name="jMv-tG-z7A"/>
-        <designable name="nX0-Sg-hHb"/>
     </designables>
     <resources>
         <image name="calendar" catalog="system" width="128" height="107"/>
