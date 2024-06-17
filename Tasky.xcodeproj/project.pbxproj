@@ -15,6 +15,7 @@
 		722F5E0F2C1DCAF800513608 /* UnderLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722F5E0E2C1DCAF800513608 /* UnderLineTextField.swift */; };
 		722F5E112C1DCC7D00513608 /* DismissAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722F5E102C1DCC7D00513608 /* DismissAnimator.swift */; };
 		722F5E132C1DCF6900513608 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722F5E122C1DCF6900513608 /* PlaceholderTextView.swift */; };
+		724414E12C202C6B006786F0 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724414E02C202C6B006786F0 /* CalendarManager.swift */; };
 		72727DF62C1ED99200F7E910 /* noTask.json in Resources */ = {isa = PBXBuildFile; fileRef = 72727DF52C1ED99200F7E910 /* noTask.json */; };
 		72727DFA2C1F0CCE00F7E910 /* TaskData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 72727DF82C1F0CCD00F7E910 /* TaskData.xcdatamodeld */; };
 		72727E092C1F0E0D00F7E910 /* TaskItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72727E052C1F0E0D00F7E910 /* TaskItem+CoreDataClass.swift */; };
@@ -76,6 +77,7 @@
 		722F5E0E2C1DCAF800513608 /* UnderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineTextField.swift; sourceTree = "<group>"; };
 		722F5E102C1DCC7D00513608 /* DismissAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissAnimator.swift; sourceTree = "<group>"; };
 		722F5E122C1DCF6900513608 /* PlaceholderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
+		724414E02C202C6B006786F0 /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
 		72727DF52C1ED99200F7E910 /* noTask.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = noTask.json; sourceTree = "<group>"; };
 		72727DF92C1F0CCE00F7E910 /* TaskData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskData.xcdatamodel; sourceTree = "<group>"; };
 		72727E052C1F0E0D00F7E910 /* TaskItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TaskItem+CoreDataClass.swift"; path = "Tasky/Models/TaskItem+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
@@ -245,6 +247,7 @@
 				72DDDBAE2C1E227C005A3D61 /* UserDefaultsManager.swift */,
 				720C3CC22C1E987600CCA348 /* CoreDataManager.swift */,
 				72727E0B2C1F0F3300F7E910 /* NotificationManager.swift */,
+				724414E02C202C6B006786F0 /* CalendarManager.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 				720C3CC72C1E9CF000CCA348 /* TaskTableViewCell.swift in Sources */,
 				720C3CC32C1E987600CCA348 /* CoreDataManager.swift in Sources */,
 				722F5E0F2C1DCAF800513608 /* UnderLineTextField.swift in Sources */,
+				724414E12C202C6B006786F0 /* CalendarManager.swift in Sources */,
 				72786A5A2C1CA48A00E7D20C /* AppDelegate.swift in Sources */,
 				72ED98322C1D671B009B4F23 /* DashboardViewController.swift in Sources */,
 				72727E092C1F0E0D00F7E910 /* TaskItem+CoreDataClass.swift in Sources */,
@@ -842,7 +846,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com..Tasky;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appfinity.TonallyReal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Tonally real development profile";
@@ -881,7 +885,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com..Tasky;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appfinity.TonallyReal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Tonally real development profile";

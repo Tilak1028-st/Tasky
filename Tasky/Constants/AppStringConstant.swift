@@ -8,6 +8,7 @@
 import Foundation
 
 struct AppStringConstant {
+    static var tasky = "Tasky"
     static var onboardingCellIdentifier = "onboardingCell"
     static var firstOnBoardingTitle = "Welcome to Your Ultimate Productivity Hub: Manage Tasks Seamlessly and Achieve More Every Day"
     static var secondOnBoardingTitle = "Effortlessly Organize Your Life: Categorize, Prioritize, and Track Your Tasks with Ease"
@@ -27,6 +28,17 @@ struct AppStringConstant {
     static var upcoming = "Upcoming"
     static var completed = "Completed"
     static var selectTime = "Select Time"
+    static var reminderDeleted = "Reminder deleted successfully"
+    static var reminderAdded = "Reminder added successfully"
+    static var reminderUpdated = "Reminder updated successfully"
+    static var ok = "OK"
+    static var calendarManager = "CalendarManager"
+    static var low = "Low"
+    static var high = "High"
+    static var medium = "Medium"
+    static var pleaseEnterTaskTitle = "Please enter a task title."
+    static var pleaseSelectDueDate = "Please select a due date."
+    static var pleaseSelectDueTime = "Please select a due time."
     
     // View Controllers
     static var taskViewController = "TaskViewController"

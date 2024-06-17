@@ -269,6 +269,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         
         // Delete action
         let deleteAction = UIContextualAction(style: .destructive, title: nil) { (action, view, handler) in
+            CalendarManager.shared.deleteEvent(title: taskItem.title ?? "", startDate: taskItem.dueDate ?? Date(), notes: taskItem.taskDescription) {success, error in
+                if success {
+                    print(AppStringConstant.reminderDeleted)
+                } else {
+                    print("Failed to add reminder: \(String(describing: error))")
+                }
+            }
             CoreDataManager.shared.deleteTaskItem(taskItem: taskItem)
             self.updateTaskLists()
             handler(true)
