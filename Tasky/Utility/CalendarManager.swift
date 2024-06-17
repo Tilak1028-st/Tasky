@@ -16,7 +16,6 @@ class CalendarManager {
     static let shared = CalendarManager()
     
     private init() {
-        // Register for EKEventStoreChanged notifications
         NotificationCenter.default.addObserver(self, selector: #selector(eventStoreChanged), name: .EKEventStoreChanged, object: nil)
     }
     
@@ -25,7 +24,6 @@ class CalendarManager {
     }
     
     @objc private func eventStoreChanged(notification: NSNotification) {
-        // Handle changes in the event store
         print("Event store changed, refresh reminder data if needed.")
     }
     
